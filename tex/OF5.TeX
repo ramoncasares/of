@@ -1,0 +1,1477 @@
+% OL5.TEX (RMCG20010122)
+
+\Section Formalizing the Apparent Problem
+
+When we use ^{automatic algebra} to formalize the ^{apparent problem},
+the ^{solution} we are searching for must be a probabilistic finite
+^{automaton}, that is, a ^{behavior}, that we will call~$\aut A$, that
+will occupy the place of the ^{unknown} in the problem, and so we will
+call it~$\aut A?$. As far as the ^{universe}, which we will represent
+by~$\aut U$, goes, we know that it is another probabilistic finite
+automaton, but we know nothing more, so that it could be any
+probabilistic finite automaton; we will indicate this with $\forall \aut
+U$. In addition, we know that in the apparent problem the unknown and
+the universe interact. Finally, we have to check that the universe's
+reactions are good, for which we will use a known ^{measurement} that
+will be another probabilistic finite automaton {\Metric}.
+
+All of these automata form the following circuit that represents the
+^{formalized apparent problem} in automatic algebra (\EPA{1.4.1}).
+% Total interaction and external measurement
+$$\MTbeginchar(110pt,70pt,0pt);
+ \MT: pickup thick_pen;
+ \MT: x1 + x2 = w; x2 = x1 + 50u; y1b = y2b = 30v;
+ \MT: rectangle(1)(20u,20v); % 1 is U
+ \MT: rectangle(2)(20u,20v); % 2 es A
+ \MT: z1lbl = z1; z2lbl = z2;
+ \MTlabel(1lbl)"$\forall \aut U$";
+ \MTlabel(2lbl)"$\aut A ?$";
+ \MT: z3o = (x2r,y2); z3d = (x1l,y1);
+ \MT: feedback(3,3o,3d)(h,10u,10u);
+ \MT: x3lbl.l = x3br; y3lbl.t = y3br - jot;
+ \MTlabel(3lbl)"\no m";
+ \MT: x4tl = x1r; x4tr = x2l; y4tl = 2/3[y1b,y1t]; y4tr = 2/3[y2b,y2t];
+ \MT: x4bl = x1r; x4br = x2l; y4bl = 1/3[y1b,y1t]; y4br = 1/3[y2b,y2t];
+ \MT: arrow(4tl,4tr); arrow(4bl,4br); % arrows from U to A
+ \MT: x4tlbl = x4tr - 10u; y4tlbl.b = y4tr + jot;
+ \MT: x4blbl = x4tlbl; y4blbl.t = y4br - jot;
+ \MTlabel(4tlbl)"\no n"; \MTlabel(4blbl)"\no v";
+ \MT: pickup thick_pen;
+ \MT: z6 = z2 - (0,30v); z6lbl = z6;
+ \MT: rectangle(6)(20u,20v); % 6 is M
+ \MTlabel(6lbl)"\Metric";
+ \MT: pickup med_pen;
+ \MT: z7o = 1/6[z4bl,z4br]; z7d = (x6l,y6); z7m = z7d - (10u,0);
+ \MT: fork(7o,7m,7d);
+ \MT: x7lbl = x7m; y7lbl.t = y7m - jot;
+ \MTlabel(7lbl)"\no v";
+ \MT: z8l = (x6r,y6); z8r = (w,y6); arrow(8l,8r);
+ \MT: x8lbl = x3lbl; y8lbl.t = y6 - jot;
+ \MTlabel(8lbl)"\sevenbf 1";
+\MTendchar;
+\box\MTbox$$
+
+The boldface~$\no n$ indicates the part of the ^{input} that does not
+directly influence the solution of the problem; this is the ^{neutral
+input}. The input ^{data} that do influence the solution are marked by
+the boldface~$\no v$; this is the ^{valued input}. The ^{output} is
+indicated with the boldface letter~$\no m$.
+
+The ^{measurement} {\Metric} uses a copy of the valued input~$\no v$. If
+its output is set to the value $0$, then the automaton \aut A will have
+failed as a solution to the problem. As for {\Metric}, we have only said
+that it is a known automaton, and this is too generic. In order to pin
+down these explanations, we will take a valid but simple case of
+{\Metric}: it sets its output to $1$ if the majority of the input
+values, at that moment, are $1$, and otherwise to $0$.
+
+This being the case, the solution to the problem, $\aut A$, should be
+capable of generating at every moment, whatever $\aut U$ is, a majority
+of~$1$ values in the valued input~$\no v$. This is what we are left with
+out of all the ^{formalized apparent problem}, and this is sufficient to
+follow the explanations that are coming next.
+
+
+\Section Notation
+
+The calligraphic letters that accompany some words may be making you
+uncomfortable. They are useful for pointing out the formal concepts
+defined mathematically: for example, with one glance, you can determine
+that the {\body} that I refer to is the body defined in the theory, and
+no other. It is worthwhile to put up with them, because they reduce the
+text's ambiguity. In exchange, they may hinder reading, but then again,
+they may not, if you learn to ignore them after a bit.
+
+\hbox{}\hbox{}\break
+
+% Total Interaction with Minimum Semantics
+$$\MTbeginchar(100pt,40pt,0pt);
+ \MT: pickup thick_pen;
+ \MT: x1 + x2 = w; x2 = x1 + 40u; y1b = y2b = 0;
+ \MT: rectangle(1)(20u,20v); % 1 is U
+ \MT: rectangle(2)(20u,20v); % 2 es A
+ \MT: z1lbl = z1; z2lbl = z2;
+ \MTlabel(1lbl)"$\forall \aut U$";
+ \MTlabel(2lbl)"$\aut A ?$";
+ \MT: z3o = (x2r,y2); z3d = (x1l,y1);
+ \MT: feedback(3,3o,3d)(h,10u,10u);
+ \MT: x3lbl.l = x3br; y3lbl.t = y3br - jot;
+ \MTlabel(3lbl)"\no m";
+ \MT: x4tl = x1r; x4tr = x2l; y4tl = 2/3[y1b,y1t]; y4tr = 2/3[y2b,y2t];
+ \MT: x4bl = x1r; x4br = x2l; y4bl = 1/3[y1b,y1t]; y4br = 1/3[y2b,y2t];
+ \MT: arrow(4tl,4tr); arrow(4bl,4br); % arrows from U to A
+ \MT: x4tlbl = 1/2[x4tl,x4tr]; y4tlbl.b = 1/2[y4tl,y4tr] + jot;
+ \MT: x4blbl = 1/2[x4bl,x4br]; y4blbl.t = 1/2[y4bl,y4br] - jot;
+ \MTlabel(4tlbl)"\no n"; \MTlabel(4blbl)"\no v";
+\MTendchar;
+\box\MTbox
+%\abovedisplayskip=0pt plus 3pt
+%\belowdisplayskip=0pt minus 6pt
+$$
+
+And with these particulars, we are now ready to resolve the ^{formalized
+apparent problem}, as we proposed in ^>Evolution and Resolution>. Let us
+keep in mind that we are trying to design an ^{automaton}~\aut A capable
+of generating at every moment, and whatever the ^{universe}~\aut U that
+it faces is, a majority of~$1$ values in the ^{valued input}~{\no v}.
+ $$\hbox{Formalizing the Apparent Problem} \etapa
+   \hbox{Resolution}
+%\abovedisplayskip=12pt minus 3pt
+%\belowdisplayskip=0pt plus 3pt
+$$
+
+
+\Section The Formal Mechanism
+
+In order to formalize the fact that nothing is known about the
+^{universe}, we have said that the {\universe} could be any finite
+^{automaton}. It can, for example, be the automaton that always produces
+$0$~values as its output. We will call this {\universe} that only
+produces $0$~values the \corporal universe$U_0$. Since it can be any
+universe at all, it could also be the universe that always produces
+$1$~values, and we will call this \corporal universe$U_1$.
+
+So then, given that the {\universe} can be any one at all, it could also
+be the \corporal universe$U_0$. And if the {\universe} were the
+\corporal universe$U_0$, then no automaton~$\aut A$ could solve the
+problem, because there would never be a majority of $1$~values in the
+valued data. Exactly the opposite would happen if the {\universe} were
+the benevolent \corporal universe$U_1$, because in that case any
+\corporal automaton$A$ would solve it.
+
+What happens, then, is that the ^{formalized apparent problem} has no
+definitive ^{solution}, but that it depends on what the {\universe},
+about which we know nothing, is like. This doesn't reveal anything new,
+except that formalization conserves this fundamental characteristic of
+the apparent problem, that is, that the apparent problem is paradoxical,
+as we saw in ^>Life Is Paradoxical>.
+
+Fantastic, but how can we resolve the apparent problem with so much
+indetermination? Although there is no definitive solution that is valid
+in every possible {\universe}, each concrete \corporal automaton$A$ will
+solve it in specific \corporal universes$U$ from the total of all
+possible ones. Let us take two automata, for example, $\aut A_a$
+and~$\aut A_b$. Suppose that automaton~$\aut A_b$ solves the problem in
+all the possible universes in which automaton~$\aut A_a$ solves it and,
+in addition, in others. In this case we could affirm that, in spite of
+all the indetermination, automaton~$\aut A_b$ is better than
+automaton~$\aut A_a$.
+
+In order to keep improving our resolution of the formalized apparent
+problem, we will show that, if a specific automaton solves it in certain
+universes, then we can construct another automaton that will also solve
+it in these universes, and, additionally, in others (\EPA{1.5}). To
+start the sequence, we will arbitrarily take an automaton, which we will
+call a ^|mechanism|, and which we will indicate as $\aut A_0$ because it
+will serve as the reference. The form of the {\mechanism} is the minimum
+that is sufficient in order to occupy the place of the ^{unknown}~$\aut
+A?$ in the formalized apparent problem (\EPA{1.6}).
+% Mecanismo
+$$\MTbeginchar(80pt,20pt,0pt);
+ \MT: pickup thick_pen;
+ \MT: x1 = w/2; y1b = 0; z1lbl = z1;
+ \MT: rectangle(1)(20u,20v); % 1 is A_0
+ \MTlabel(1lbl)"${\aut A}_0$";
+ \MT: pickup med_pen;
+ \MT: z2o = (0,1/3[y1b,y1t]); z2d = (x1l, y2o); arrow(2o,2d);
+ \MT: z3o = (0,2/3[y1b,y1t]); z3d = (x1l, y3o); arrow(3o,3d);
+ \MT: y2lbl.t = y2.o - jot; y3lbl.b = y3.o + jot;
+ \MT: x2lbl = 1/2[x2o,x2d]; x3lbl = 1/2[x3o,x3d];
+ \MTlabel(2lbl)"\no v"; \MTlabel(3lbl)"\no n";
+ \MT: z4o = (x1r,1/2[y1b,y1t]); z4d = (w, y4o); arrow(4o,4d);
+ \MT: y4lbl.t = y4o - jot; x4lbl = 1/2[x4o,x4d];
+ \MTlabel(4lbl)"\no m";
+\MTendchar;
+\box\MTbox
+$$
+
+
+\Section The Formal Adaptor
+
+The {\mechanism} has a behavior that will solve certain \corporal
+universes$U$, so that an {\adaptor} capable of behaving like a
+{\mechanism} and in other ways besides, could solve more universes. This
+observation permits us to design an {\adaptor} that improves the
+{\mechanism}. Let us take a look at this.
+
+The ^|adaptor|~$\aut A_1$ is made up of a {\body}, capable of various
+behaviors, and of a {\governor}, that chooses which of the behaviors
+will be executed.
+
+\point The ^|body|~$\aut B$ is an automaton capable of behaving like
+the {\mechanism} and in other ways besides, so that it is, technically,
+an ^{extension} of the {\mechanism}. Although technicalities do not
+interest us here, it is important to know that, given any finite
+automaton, it is always possible to construct an extension of it, and,
+as this does not depend on any condition, we say that the design of the
+{\body} is specified.
+
+\point The ^|governor|~$\aut G$ is another automaton whose purpose is
+to order the {\bodys} ^{behavior}. The design of the {\governor} is not
+specified, but if it fulfills a condition that we will call the
+condition of the governor, then the {\adaptor} solves, at the very
+least, all of the \corporal universes$U$ that the {\mechanism} also
+solves. Consequently, the {\adaptor} will assuredly be as good or better
+than the {\mechanism}. The ^{condition of the governor} is verified if,
+when the {\adaptor} faces a {\universe} that the {\mechanism} solves,
+its {\governor} orders the {\body} to behave in precisely the same way
+as the {\mechanism}.
+
+\noindent Finally, in order for the {\governor} to be in the best
+position to fulfill the condition of the governor, it must receive all
+of the ^{data}. Thus, we reach the definition of the form of the
+{\adaptor} (\EPA{2}).
+% Adaptor
+$$\MTbeginchar(140pt,60pt,0pt);
+ \MT: pickup thick_pen;
+ \MT: x1r = w - 20u; y1b = 0; z1lbl = z1;
+ \MT: rectangle(1)(20u,20v); % 1 is B
+ \MTlabel(1lbl)"\aut B";
+ \MT: x2r = x1l - 40u; y2b = y1t; z2lbl = z2;
+ \MT: rectangle(2)(20u,20v); % 2 is G
+ \MTlabel(2lbl)"\aut G";
+ \MT: z3o = (x1r+5u,y1); z3d = (x2l,3/4[y2b,y2t]);
+ \MT: forkback(3,3o,3d)(h,10u,10u);
+ \MT: x3lbl.l = x3o; y3lbl.t = y3o - jot;
+ \MTlabel(3lbl)"\no m";
+ \MT: z4o = (x1r,y1); z4d = (w,y1); arrow(4o,4d);
+ \MT: z6o = (0,1/4[y1b,y1t]); z6d = (x1l, y6o); arrow(6o,6d);
+ \MT: z7o = (0,2/4[y1b,y1t]); z7d = (x1l, y7o); arrow(7o,7d);
+ \MT: y6lbl.t = y6.o - jot; y7lbl.b = y7.o + jot; x6lbl = x7lbl = 5u;
+ \MTlabel(6lbl)"\no v"; \MTlabel(7lbl)"\no n";
+ \MT: z8d = (x2l,1/4[y2b,y2t]); z9d = (x2l,2/4[y2b,y2t]);
+ \MT: z8m = z8d - (10u,0); z9m = z9d - (10u,0);
+ \MT: z8o = (10u,y6o); fork(8o,8m,8d);
+ \MT: z9o = (x8o,y7o); fork(9o,9m,9d);
+ \MT: z10o = (x2r,y2); z10m = z10o + (5u,0);
+ \MT: z10d = (x1l,3/4[y1b,y1t]); z10n = z10d - (10u,0);
+ \MT: arrowww(10o,10m,10n,10d);
+ \MT: x10lbl.l = x10m; y10lbl.b = y10m + jot;
+ \MTlabel(10lbl)"\no b";
+\MTendchar;
+\box\MTbox$$
+
+We have used an automaton, the {\body}, with various behaviors here, as
+we mentioned previously in ^>Behavior>. The data~$\no b$ that the
+{\governor} prepares, constitute the {\bodys} ^{program}, while the
+^{neutral input}~$\no n$ and the ^{valued input}~$\no v$ are, in this
+case, the ^{ordinary input}.
+
+
+\Section Comparing Adaptors
+
+In order to show that the equivalence between the resolution of the
+apparent problem and Darwinian evolution, proposed in ^>Evolution and
+Resolution>, is actually verified, we will see that the formal
+{\adaptor} corresponds to the evolutionary adaptor presented from
+_>The Adaptor> to _>The Adaptor's Reality Is Objective> in the entry
+path.
+
+A formal {\adaptor} is a finite automaton divided in two parts, a
+{\body} capable of various behaviors and a {\governor} that chooses the
+body's behavior. Thus defined, this formalized {\adaptor} does not look
+very much like the evolutionary adaptor that placed a network of objects
+between the phenomenon and the action. What happens is that the
+resolutive formal {\adaptor} is more general than the evolutionary
+adaptor of the entry path, which it includes. Because the evolutionary
+adaptor chose the behavior according to the objects present and,
+therefore, perception, which was the part that determined which objects
+were present, was, by this very action of determining the objects, what
+chose the adaptor's behavior. So, according to the formalization that is
+carried out, perception does the job of the {\governor}, but in a
+concrete way, using objects.
+
+\hbox{}\hbox{}\break
+
+The relation between both adaptors is made patent when we indicate, on
+the diagram of the evolutionary adaptor shown in ^>The Adaptor>, the
+parts of the formal {\adaptor} that carry out the processing of data
+represented by each arrow.
+$$\hbox{Phenomenon}
+  \underbrace{
+   \base{$\aut G\;\;$\cr$\longrightarrow\;$}
+   \hbox{\strut Object}
+   \base{$\aut B$\cr$\;\longrightarrow$}}_{\hbox{\strut Adaptor}}
+  \hbox{Action}
+$$
+
+
+\Section Improving the Body
+
+The formal resolution of the apparent problem took us from the
+{\mechanism}, with only one behavior, to the {\adaptor}, which improved
+the mechanism's action because it was capable of various behaviors. In
+the same way, an {\adaptor} can improve another adaptor if it is capable
+of more behaviors. There is little more to say about this quantitative
+line of resolution improvement, which tends to increase the {\bodys}
+versatility; but we must not forget it when we make the next qualitative
+leap, even if it will be a much more spectacular one.
+
+
+\Section Foresight
+
+When the formal {\adaptor} was defined, its {\body} was specified, but
+as far as its {\governor} is concerned, we only established a sufficient
+condition for improving the {\mechanism}, the ^{condition of the
+governor}. So now, in order to design a {\learner} that will improve the
+{\adaptor}, we will focus on improving the {\governor}.
+
+The {\governors} task, which consists of choosing the {\bodys} behavior,
+can be done in several ways. If the {\universe} were fully known, which
+is not the case with an apparent problem, then a {\governor} could be
+designed that would systematically choose the optimal behavior, without
+ever erring and, therefore, with no need to ever rectify its choice. We
+will call any non-rectifying governor a ^{mechanical governor}. At the
+opposite extreme, we have ^[Ashby]'s^(Ashby1956) ^{homeostat}, which
+chooses behavior by chance, but rectifies the behavior, making another
+equally aleatory choice, when the valuation obtained does not reach a
+certain threshold. In this way, it is certain that only those behaviors
+of the homeostat whose value is above this threshold are stable.
+
+A continuum can be established from the mechanical governor, that never
+rectifies the chosen behavior, to the homeostat, that puts all of its
+trust in rectification, because it chooses without any criteria. We will
+call a {\governor} that tests a ^{tester}; that is, the tester employs a
+trial-and-error procedure. The homeostat is then an extreme example of a
+tester.
+
+A {\governor} that tests does not foresee, but tries a behavior, and if
+it doesn't solve the problem, tries another. The case of the mechanical
+{\governor} is worse, because, in addition to not foreseeing anything,
+it is incapable of rectifying if the behavior is bad, something that the
+tester is able to do. A better way of choosing behavior consists of
+foreseeing_{foresight} its effect before executing it, because, if the
+prognosis is exact, it avoids suffering the errors inherent to the
+trial-and-error procedure. Thus, the difference between a {\learner} and
+an {\adaptor} is that the {\learner} foresees the future, and the
+{\adaptor} does not. In order to foresee the result of executing a
+behavior, it is necessary to have an internal model of the exterior
+available; we will call this model {\reality}. And with these
+reasonings, we can now design a {\learner}.
+
+
+\Section The Formal Learner
+
+The ^|learner|~$\aut A_2$ has three parts: a {\body}, capable of various
+behaviors, a {\modeler}, that models the exterior, and a {\simulator},
+that chooses the current behavior comparing possible behaviors with each
+other on the basis of their effects as predicted by the model.
+
+\point The {\learners} {\body} is capable of various behaviors,
+the more the better, as we saw in ^>Improving the Body>, but it has at
+least all the behaviors the {\adaptor} has, in order to surpass it.
+Technically, the {\learners} {\body} is an ^{extension} of the
+{\adaptors} {\body} and its design is, therefore, specified.
+
+\point The {\modelers}_|modeler| task consists of searching for
+a model of the exterior {\universe}, a model that we will call
+^|reality|~$\aut R$. The {\modeler} observes the action that the
+{\learner} itself carries out upon the {\universe} and the universe's
+reactions, and, with these data, makes reality, which is a behavior,
+that is, an automaton~$\aut R$. If {\reality} is indistinguishable from
+the exterior {\universe}, then it serves to make accurate predictions
+and we say that it fulfills the ^{condition of the modeler}.
+
+\point The ^|simulator|~$\aut S$ orders the behavior and,
+in order to choose it, can use {\reality} and so foresee_{foresight} its
+consequences before it executes the behavior. The simulation is
+completely internal for the {\learner}; it receives {\reality} from the
+{\modeler} and emits behavior to the {\body}; that is why its design is
+completely specified.
+
+\noindent We will show that the condition of the modeler is a
+sufficient condition for the {\learner} to surpass the {\adaptor}. If
+the {\learner} fulfills the condition of the modeler, that is, if the
+predictions of {\reality} are accurate, then the {\learner} can simulate
+perfectly the situation that the {\adaptor} faces. But the {\learner}
+has the advantage of avoiding the actual execution in the exterior
+{\universe} of the foreseeably worst behaviors, which coincide with the
+worst behaviors, because we are supposing that the predictions are
+correct.
+
+The form of the {\learner} is shown in the following figure (\EPA3).
+% Learner
+$$\MTbeginchar(170pt,60pt,0pt);
+ \MT: pickup thick_pen;
+ \MT: x1r = w - 20u; y1b = 0; z1lbl = z1;
+ \MT: rectangle(1)(20u,20v); % 1 is B
+ \MTlabel(1lbl)"\aut B";
+ \MT: x2r = x1l - 70u; y2b = y1t; z2lbl = z2;
+ \MT: rectangle(2)(20u,20v); % 2 es M
+ \MTlabel(2lbl)"\aut M";
+ \MT: z3o = (x1r+5u,y1); z3d = (x2l,3/4[y2b,y2t]);
+ \MT: forkback(3,3o,3d)(h,10u,10u);
+ \MT: x3lbl.l = x3o; y3lbl.t = y3o - jot;
+ \MTlabel(3lbl)"\no m";
+ \MT: z4o = (x1r,y1); z4d = (w,y1); arrow(4o,4d);
+ \MT: z6o = (0,1/4[y1b,y1t]); z6d = (x1l, y6o); arrow(6o,6d);
+ \MT: z7o = (0,2/4[y1b,y1t]); z7d = (x1l, y7o); arrow(7o,7d);
+ \MT: y6lbl.t = y6.o - jot; y7lbl.b = y7.o + jot; x6lbl = x7lbl = 5u;
+ \MTlabel(6lbl)"\no v"; \MTlabel(7lbl)"\no n";
+ \MT: z8d = (x2l,1/4[y2b,y2t]); z9d = (x2l,2/4[y2b,y2t]);
+ \MT: z8m = z8d - (10u,0); z9m = z9d - (10u,0);
+ \MT: z8o = (10u,y6o); fork(8o,8m,8d);
+ \MT: z9o = (x8o,y7o); fork(9o,9m,9d);
+ \MT: pickup thick_pen;
+ \MT: z11 = z2 + (40u,0); z11lbl = z11; rectangle(11)(20u,20v);
+ \MTlabel(11lbl)"\aut S";
+ \MT: pickup med_pen;
+ \MT: z12o = (x2r,y2); z12d = (x11l,y11); arrow(12o,12d);
+ \MT: x12lbl = 1/2[x12o,x12d]; y12lbl.b = 1/2[y12o,y12d] + jot;
+ \MTlabel(12lbl)"\no r";
+ \MT: z13o = (x11r,y11); z13m = z13o + (5u,0);
+ \MT: z13d = (x1l,3/4[y1b,y1t]); z13n = z13d - (10u,0);
+ \MT: arrowww(13o,13m,13n,13d);
+ \MT: x13lbl.l = x13m; y13lbl.b = y13m + jot;
+ \MTlabel(13lbl)"\no b";
+\MTendchar;
+\box\MTbox
+$$
+
+The data~$\no r$ allow the {\modeler} to communicate what {\reality} is
+like to the {\simulator}. Since {\reality} is an automaton, the
+data~$\no r$ specify a behavior, so they are a program (see
+^>Behavior>). So the {\simulator} receives a program~$\no r$ that
+describes the behavior of the exterior {\universe}, and in response
+emits another program~$\no b$ that describes what the {\bodys} behavior
+should be.
+
+
+\Section Internal Logic
+
+The {\learner} must have various possible representations of the
+exterior {\universe}, which can be any kind of universe, the more the
+better. The more representations it has, the more probable it is that it
+will have one that behaves up to that moment like the {\universe}, and
+thus will make better predictions, and work as {\reality}. That is, the
+{\learner} needs to have an internal system of representation that we
+will call ^|internal logic|. This internal logic must also represent
+internally its {\bodys} behaviors in order to simulate their effects.
+This explains the existence of somatic maps_{somatic map} in the
+learners' ^{brain}.
+
+Just as in ^{automatic algebra} both the {\universe} and the {\body} are
+finite automata_{automaton}, the {\learners} internal logic must be
+capable of representing finite automata, or behaviors_{behavior}, the
+more the better.
+
+
+\Section The Problem of the Learner
+
+The {\simulator} has to resolve a problem similar to the problem of
+survival, but, instead of being up against any universe, $\forall \aut
+U$, it is up against the best model found by the {\modeler}, the model
+we call {\reality}. This problem, which we will call the ^|problem of
+the learner|, is not an ^{apparent problem}, because the {\simulator}
+uses {\reality} as ^{information}.
+
+The problem of the learner is not apparent, because the appearance
+remains in the problem that the {\modeler} faces. If we forget this, we
+may confuse {\reality} with the exterior {\universe}, a sin which we
+will call ^{logicism}. It is a sin because, even if {\reality} has
+predicted everything accurately up to now, we can never be sure that the
+next prediction will be correct. The universe continues to be completely
+unknown, that is, it can be any universe, $\forall \aut U$. The
+{\universe} can, for example, be one that behaves just like {\reality}
+until the following instant, in which it ceases to behave like reality.
+Another consequence of this argument is that it is not possible to
+verify if the ^{condition of the modeler} is fulfilled or not.
+
+But even if it is a sin, the {\simulator} works with the logicist
+hypothesis, that is, as if {\reality} were the exterior {\universe},
+because it has no better hypothesis.
+
+
+\Section Comparing Learners
+
+Both the formal resolutive {\learner} as well as the evolutionary
+learner of the entry path (seen from _>The Learner> to _>The Learner's
+Reality Changes>) model reality, and both foresee_{foresight} the
+future, and so the relationship between them is clear. The evolutionary
+learner is a specific case of the resolutive {\learner}, because the
+first one uses a reality of objects, while the second does not impose
+requirements on {\reality}. Thus, for example, ^{logicism}, which
+appeared when we studied the formal {\learner}, takes the form of
+^{objectivism} when reality is objective.
+
+In order to demonstrate the correspondence existing between both
+learners, we pointed out the parts of the formal {\learner} that carry
+out the data process represented by each arrow on the diagram of the
+evolutionary learner shown in ^>Simulation>.
+$$\hbox{Phenomenon}
+   \underbrace{\strut
+    \base{$\aut M\;\;$\cr$\longrightarrow\;$}
+    \base{\vrule width0pt depth2pt$\aut S$\cr \onitself{\strut Object}}
+    \base{$\aut B$\cr$\;\longrightarrow$}}_{\hbox{\strut Learner}}
+  \hbox{Action}
+%\abovedisplayskip=12pt minus 3pt
+%\belowdisplayskip=0pt plus 3pt
+$$
+
+
+\Section The Double Resolution
+
+In order to take the next step for resolving_{resolution} the ^{apparent
+problem}, we must go back to the beginning of this resolution. At that
+point we saw, in ^>The Apparent Problem>, that the way of attacking an
+apparent problem, which has no definitive solution, consists of trying
+various resolutions and passing ^{information} from the ones already
+tried out to the ones that have not yet been tried. What we are
+interested in now is that, given that the apparent problem has no
+definitive solution, its resolution process consists of designing
+resolutions that keep getting better with the information obtained from
+previous resolutions; specifically, the {\mechanism}, the {\adaptor},
+and the {\learner} are resolvers, not solutions.
+
+That is why the resolution of the apparent problem has two levels. The
+upper level is carried out by the general ^{resolution} of the apparent
+problem corresponding to Darwinian ^{evolution}, for which all ^{life},
+as a totality, must be considered as a single resolving being, as
+^[Lovelock]^(Lovelock1979) proposes. The lower level corresponds to the
+resolution that each individual living organism executes, since each one
+is a resolver.
+
+
+\Section The Formal Knower
+
+The {\mechanism}, the {\adaptor}, and the {\learner} are resolvers. Each
+one resolves problems in its own way, that is, each one searches, in a
+specific way, for a behavior that will solve the problem. Thus, just as
+the {\adaptor} is an improvement over the {\mechanism}, simply because
+it is capable of more behaviors, the ^|knower|~$\aut A_3$, which is what
+we call the next resolver of the formalized apparent problem, will be
+capable of more ways of resolving problems.
+
+Because the {\knower} is capable of resolving problems in various ways,
+we can divide it into two parts:
+\point A ^|mind|~$\syn M$ that is capable of resolving problems in
+various ways.
+\point An ^|intelligence|~$\syn A$ that decides which way of resolving
+the problem should be executed at each moment.
+
+\noindent In order for the {\knower} to improve the {\mechanism}, the
+{\adaptor}, and the {\learner}, it is enough for its {\mind} to be
+capable of resolving problems like each of these, and for the
+{\intelligence} to satisfy the ^{condition of intelligence}, that is, to
+choose the {\mechanisms} manner of resolving the problem if the
+{\mechanism} solves it, the {\adaptors} manner, if this solves it, and
+the {\learners} manner, if this solves it (\EPA6).
+$$\hbox{Problem}\,
+   \underbrace{\strut
+    \base{{\frakx A}$\;\;$\cr $\longrightarrow\;$}
+  \hbox{Resolution}
+    \base{{\frakx M}\cr $\;\longrightarrow$}}_{\hbox{%
+     Knower$\,{\cal A}_3$}}
+  \,\hbox{Solution}
+$$
+
+The {\minds} design is completely specified and, as a last resort, the
+{\mind} could be constructed by simply aggregating the {\mechanism}, the
+{\adaptor}, and the {\learner}, and completing this aggregate with a
+selector that would allow a choice between these components. The task of
+the {\intelligence} would consist, precisely, of managing the selector
+in order to choose one of the three. To summarize, we have a {\mind}
+that permits the {\knower} to work at will as a {\mechanism}, as an
+{\adaptor}, or as a {\learner}. But how should the selector be managed?
+In other words, how should the {\intelligence} be designed?
+
+As in the case of the {\governor} (see ^>Foresight>), the knower's
+{\intelligence} can choose the resolution either mechanically, or by
+testing_{test}. Testing does not insure that the {\knower} is an
+improvement over the {\mechanism}, the {\adaptor}, and the {\learner}.
+On the other hand, we might think that, because we have shown that the
+{\learner} is better than the {\adaptor}, and the {\adaptor} is better
+than the {\mechanism}, then the {\learners} way of resolution should
+always be preferable. But we must remember that the improvements were,
+in each case, conditioned by the fulfillment of some specific
+requisites. Thus, the principal task of the {\intelligence} will be to
+check to see if the ^{condition of the governor} is fulfilled or not, in
+order to discriminate between mechanization and adaptation, and if the
+^{condition of the modeler} is fulfilled, to discriminate between
+adaptation and learning.
+
+
+\Section Intelligence
+
+The ^{condition of the governor} discriminates between the mechanism and
+the adaptor. We must remember that the {\adaptor} improves upon the
+{\mechanism} if it fulfills the condition of the governor, that is, if
+the {\adaptor} behaves like the {\mechanism} when the mechanism is the
+solution in a {\universe}. What happens in these circumstances is that
+the {\adaptor} and the {\mechanism} have identical behavior, with the
+mechanism's behavior being simpler. We can deduce the first rule of the
+  \vadjust{\break}
+knower's {\intelligence} from this. The {\intelligence}, upon realizing
+that a mechanized behavior is the solution, will apply this
+\hbox{mechanized} behavior to avoid other more costly calculations that,
+working as an {\adaptor} or as a {\learner}, it would have to carry out.
+
+If, on the contrary, no mechanized behavior solves the problem (we will
+describe this case rather inaccurately as an unsatisfied condition of
+the governor), then a more complex resolution is required, either as an
+{\adaptor} or as a {\learner}. In this case, the discrimination depends
+on the ^{condition of the modeler}. Because, if the condition of the
+modeler is fulfilled, that is, if the {\reality} that the {\modeler}
+finds foresees_{foresight} things with sufficient precision, then it is
+worthwhile for the {\knower} to work as a {\learner}. But if the
+condition of the modeler is not fulfilled, if the previsions of the best
+{\reality} found are not trustworthy, then it is better for the knower
+to do without them and work as an {\adaptor}. This is the second rule of
+the knower's {\intelligence}.
+
+Thirst_{thirst}, which indicates that the present behavior is not
+solving the problem, is an example of an unsatisfied condition of the
+governor. And ^{perplexity} is an example of an unfulfilled condition of
+the modeler. Both feelings, because they are originated by unsatisfied
+desirable conditions, are painful, but thirst is physical and perplexity
+is mental. And so we discover two kinds of sentiments_{sentiment}:
+corporal feelings, so classified because they depend upon the goodness
+or badness of the behaviors that the {\body} executes, and mental
+feelings, described thus because they depend on the goodness or badness
+of the resolutions that the {\mind} carries out. So ^{feeling} is a
+complex issue that includes internal information about the bodily state
+and about the mental state.
+
+We can say that all this information is organized in three maps: the
+^{somatic map}, which represents the {\body}, the ^{mental map}, which
+represents the {\mind}, and {\reality}, which is the map that represents
+the exterior. In order for the three maps to be useful to the
+{\intelligence}, they must be conveniently related. We give the name
+^{meaning} to the ^{information} that integrates the different mental
+and bodily, internal and external maps, and makes them cohere; this
+information is fundamental to the unitary working of the {\knower}.
+
+We will not go into greater detail here, such as the interesting illness
+called ^[Camus] disease, because a complete description would deflect
+our attention from the principal issues (if you are interested, you can
+see the discussion of this topic in \EPA{6.4}).
+
+
+\Section Comparing Knowers
+
+A comparison of knowers maintains the tendency observed in previous
+comparisons between the formal resolution of the apparent problem and
+Darwinian evolution (see _>Comparing Adaptors> and _>Comparing
+Learners>): the formal {\knower} is more general than the evolutionary
+knower presented from _>The Knower> to _>The Knower's Reality Is
+Semantic>. Both are capable of resolving problems in various ways, and
+this is the essence of the knower. But when we described the
+evolutionary knower at the entry path, we noticed that, of all the
+different ways that reality can be used, one of them consists of using
+it as a whole and others consist of using part of it. We saw, for
+example, how thirst could be a subproblem of a problem of survival that
+the evolutionary knower could face. In the case of the formal {\knower},
+the ways of resolving a problem are not limited.
+
+Nevertheless, in order for the comparison to be exact, we must keep in
+mind that the evolutionary knower's semantic reality (seen in ^>The
+Knower's Reality Is Semantic>) includes, in addition to strict
+{\reality}, also the ^{somatic map}, the ^{mental map}, and the
+^{meaning}, which is the relationship between the other three, in its
+corresponding formal {\knower}.
+
+When we were investigating the feelings of the {\knower} in the previous
+section (_>Intelligence>), we discovered that the {\intelligence}
+receives internal information, bodily as well as mental, and external
+information. Therefore, the ^{emotional system}, that corresponds to the
+formal {knower's} {\intelligence}, should be placed at the end of three
+arrows in the diagram of the evolutionary knower, although these three
+arrows are not shown because they would complicate the representation.
+Each of these three arrows would originate at one of the three arrows of
+the diagram of the ^{learner}; that is, these new arrows coming from
+other arrows would represent data from a new layer.
+
+
+\Section Improving the Mind
+
+The {\knower} is an improvement over its predecessors because it is
+capable of various resolutions, not just one. But by the same token, a
+{\knower} can be an improvement over another if its {\mind} is capable
+of more ways of resolving problems. Thus, increasing the {\minds}
+versatility is the path for improving resolutors that was quantitative
+at first and most probably preceded the following qualitative
+improvement.
+
+
+\Section The Formal Subject
+
+The {\subject} is to the {\learner}, as the {\knower} is to the
+{\adaptor}, with the {\adaptor} and the {\learner} being in the layer of
+solutions or behaviors, and the {\knower} and the {\subject} in the
+layer of resolutions. That is, just as the {\adaptor} was capable of
+various behaviors and the {\learner} was, too, but with the possibility
+of foreseeing the effect of these behaviors, the {\knower} is capable of
+various resolutions and the {\subject} is, too, but with the possibility
+of foreseeing_{foresight} the effect of these resolutions. We will say
+that the {\subject} can ^{reason} about the resolutions.
+
+In order to foresee the effect of the resolutions, it is necessary to
+comprehend the problem that the resolutions are facing. Thus, the
+^|subject|~$\aut A_4$ consists of three parts: an {\inquirer} that
+searches for the best representation of the problem it is facing,
+{\reason} that searches for the best possible resolution for the problem
+that the {\inquirer} has found, and a {\mind} that resolves the problem
+in the way decided upon by {\reason} (\EPA7).
+$$\hbox{Problem}\,
+   \underbrace{\strut
+    \base{{\frakx I}$\;\;$\cr $\longrightarrow\;$}
+    \base{\vrule width0pt depth2pt{\frakx R}\cr \onitself{\strut Resolution}}
+    \base{{\frakx M}\cr $\;\longrightarrow$}}_{\hbox{%
+     Subject$\,{\cal A}_4$}}
+  \,\hbox{Solution}
+$$
+
+\point The {\subjects} {\mind} must be capable of various
+resolutions, the more the better, as we saw in the previous section
+(_>Improving the Mind>). But it must at the very least be capable of all
+of the resolutions the knower is capable of, in order to surpass the
+{\knower}. Just as the {\knowers} {\mind} is specified, so also is the
+{\subjects} mind, because in the end they could be the same.
+
+\point The ^|inquirer|~$\syn I$ searches for the best representation of
+the problem it is facing. We will call this representation the ^|problem
+of the subject|, or simply ^|self|~$\syn X$. If the problem encountered,
+the {\self}, were indistinguishable from the problem that the {\subject}
+is effectively facing, then we would say that it fulfills the condition
+of the inquirer.
+
+\point The task of ^|reason|~$\syn R$, to search for the best possible
+resolution for the problem of the subject, is specified because it is
+completely internal to the {\subject}. That is, the determination of
+which is the best resolution for the \mental problem$X$ found by the
+{\inquirer}, from among all the resolutions that the {\mind} is capable
+of, can be made, as a last resort, by a systematic search.
+
+\noindent The ^{condition of the inquirer} is a sufficient condition
+for the {\subject} to surpass the {\knower}, because, if it is
+fulfilled, that is to say, if the {\inquirer} finds a problem that is
+indistinguishable from the problem it is facing, then the {\subjects}
+{\reason} can calculate ahead of time the goodness or badness of the
+resolution before undertaking it, and can thus avoid suffering the
+errors that the {\knower} is incapable of anticipating. This is so, even
+though it is impossible to verify that the condition of the inquirer is
+definitively satisfied; this is impossible because the {\subject} is
+facing an apparent problem.
+
+
+\Section The Symbolic Subject
+
+In order for the {\subject} to foresee_{foresight} the effect of the
+possible resolutions on the problems to be solved, it must be capable of
+representing problems and resolutions, and to do that, it must have a
+^{symbolic logic}, with ^{semantics} and recursive ^{syntax}. We will
+now take these two steps, but we will take them one by one.
+
+A first step towards converting the {\knowers} ^{internal logic} into a
+symbolic logic consists, as we saw in ^>Semantics and Syntax>, in adding
+a syntactic layer to the preexisting logic, which we will call semantics
+because the knower's reality is semantic (see ^>Comparing Knowers>).
+That is, the {\knowers} logic, capable of representing the exterior
+{\universes} behavior and the {\knowers} own behavior, as well as the
+conditions that its {\intelligence} evaluates, become the semantic layer
+of the {\subjects} logic. And a syntactic layer appears over this
+semantic layer to complete the symbolic logic. Once the {\subjects}
+symbolic logic is constructed in this way, its solutions have to have
+the same nature as those of the {\knower} and of the {\learner}; that
+is, they are automata_{automaton}~$\aut A$, or behaviors. More than a
+limitation, this is a requisite. We call a logic with semantics and
+syntax a ^{grammatical logic}.
+
+But since not just any syntax will do, it is necessary to take the
+second step. The more problems the {\subjects} logic is capable of
+representing, the more possibilities there are that it can represent the
+problem that it is facing at the moment. In addition, given the
+evolution of the {\mind} towards increasing versatility (see ^>Improving
+the Mind>), it is also necessary for the {\subjects} logic to represent
+the greatest possible quantity and variety of resolutions. In these
+circumstances, and keeping in mind that resolutions are syntactic
+transformations (as we saw in _>Semantics and Syntax>), the syntax must
+have the maximum expressiveness and, therefore, it must be
+recursive_{recursivity}. In other words, the syntax must be such that
+even the syntactic transformations themselves can be expressed. To
+conclude, and given that a ^|symbolism| is precisely any grammatical
+logic whose syntax is recursive, it turns out that the {\subjects} logic
+must be symbolic.
+
+
+\Section The Chomsky Hierarchy
+
+In order to understand the scope of the symbolisms, with their recursive
+syntaxes, we would do well to locate them in the ^[Chomsky] ^{hierarchy
+of grammars}. I will attempt to explain the situation without going into
+the most technical details, but if you wish, you can skip the entire
+trip through the ^{theory of computation} and proceed directly to
+^>Algorithms>, where the most important conclusions are summarized.
+Another possibility, which I recommend to you, is that you become
+interested in the theory of ^{computation}. A solid text such as those
+by ^[Fernández] and ^[Sáez Vacas]^(Fernández1987), by ^[Carroll] and
+^[Long]^(Carroll1989), or by ^[Arbib]^(Arbib1987) can ease your
+introduction to this subject.
+
+\mental Grammar$G$_{grammar} is the name given to the set of rules that
+allow us to construct all the syntactic expressions of a certain \Mental
+language$L$, which is how the set of correctly constructed syntactic
+expressions is defined. It is important to note that, with this
+technical definition and contrary to common use, \mental language$L$ is
+equivalent to syntax, with semantics excluded. So that the first step in
+the analysis of a ^{syntactic expression} consists of deciding if it
+belongs to the language or not, that is, if it is correctly constructed
+or not. The mechanism that is capable of deciding if a specific
+expression belongs to the \mental language$L$ is called a ^{recognizer},
+and we say that it accepts_{accept} the expression if it recognizes it
+as syntactically correct.
+
+The ^[Chomsky] hierarchy of grammars identifies four types of languages
+that, I repeat, should be more correctly called syntaxes, each of which
+is associated with a type of grammar and with a type of recognizer. The
+difference between the simplest type of language in the hierarchy,
+\Mental regular language$L_3$, and the most complex, unrestricted
+\Mental grammatical language$L_0$_{unrestricted language}, is the
+following. A finite ^{automaton} can, with a single sequential reading,
+that is, without needing to retrocede, recognize any syntactic
+expression of a \mental regular language$L_3$; but to analyze a
+syntactic expression of a \mental grammatical language$L_0$, it
+generally needs to transform it into other expressions, whose lengths
+are not limited, going forward and backward in the reading and writing
+of the expressions as much as necessary for the analysis.
+
+Since the lengths of the intermediate expressions are not limited, an
+automaton that analyzes expressions from an unrestricted \mental
+grammatical language$L_0$ will need to use a potentially infinite tape
+in order to retain them while it analyzes them, because the finite
+automaton's memory is, by definition, finite. We call a finite automaton
+with an infinite tape a {\TM}. The ^{tape} is, then, another memory that
+the {\TM} uses specifically to retain syntactic expressions while it is
+analyzing them. The finite automaton of the {\TM} is called the
+\Processor$T$.
+$$\hbox{^[Turing] Machine~$\syn T$}\left\lbrace
+  \vcenter{\hbox{Processor~${\cal P}_{\syn T}$}
+           \hbox{Tape}}\right.
+$$
+
+In order to indicate that, if we write the syntactic expression~$\frak
+e$ on the tape of the {\TM} whose processor is~${\cal P}_{\syn T}$ and
+we leave it functioning, then when it stops we will find the syntactic
+expression~$\frak r$ on the tape, we will use the following notation:
+$${\cal P}_{\syn T}[{\frak e}] \rightarrow {\frak r} .$$
+If, on the contrary, the {\TM} does not stop when we write the
+expression $\frak x$, then we would say that $\frak x$ is a ^{paradox},
+and we would indicate this as follows:
+$${\cal P}_{\syn T}[{\frak x}] \rightarrow \infty .$$
+
+Given any expression, the \corporal finite automaton$R_3$ that is the
+recognizer for a certain \mental regular language$L_3$ is always capable
+of deciding if the expression belongs to it or not, with a single
+sequential reading. But the most that we can insure about the ^[Turing]
+machine~$\syn R_0$ that is a recognizer of the \mental grammatical
+language$L_0$ is that it may recognize the expression as belonging to
+this language, that it may recognize it as not belonging to this
+language, or that it may never finish analyzing it. In other words,
+paradoxes can be expressed in \mental grammatical
+languages$L_0$_{grammatical language}.
+
+We owe this important result, known as the halting problem, and closely
+related with ^[Gödel]'s^(G\"odel1931) ^{undecidability} theorem,  to
+^[Turing]^(Turing1936); we will study it in greater detail in
+_>Reflexive Paradoxes>. It is as if the atemporality or reversibility of
+non-restricted syntactic expressions, that can be examined with no
+limitations, going forward and backward, were to blame for paradoxes.
+And, based on the idea that time cannot be seen unless it is from an
+atemporal logic, I suspect that here we find the essence of ^{time}. But
+vertigo prevents me from continuing to investigate this matter, that was
+already examined in ^>Syntax Is What Is Permanent>. Besides, it would
+distract us from another, more fundamental, discovery also by ^[Turing]
+in 1936.
+
+
+\Section The Universal Turing Machine
+
+There is a type of ^[Turing] machine, as we already announced in
+^>Behavior>, that is called the {\UTM} and that is capable of behaving
+like any {\TM}. More specifically, a {\UTM} interprets part of the
+^{syntactic expression}, a part that we will call \Mental
+algorithm$P_{\syn T}$, as the description of a specific {\TM} to
+imitate, which can be any one at all. So the result of analyzing the
+other part of the expression, the so-called ^{arguments} or \Mental
+parameters$d$, is, in every case, the same result that the {\TM} being
+imitated would obtain. That is to say:
+$${\cal P}_{\syn U}[{\syn P}_{\syn T}({\syn d})] \equiv
+  {\cal P}_{\syn T}[{\syn d}] .$$
+It is surprising that the ^[Turing] machine to be imitated can be any
+one at all, even the {\UTM} itself. It seems quite simple to say that
+the imitator can imitate itself; however, the imitator is an imitator
+because it imitates someone, so that, in this case, a part of the
+\mental arguments$d$ is the \mental algorithm$P'$ that describes the
+machine that the imitated imitator imitates. It's clear, isn't it?
+$${\cal P}_{\syn U}[{\syn P}_{\syn U}
+( \underbrace{{\syn P'}({\syn d'})}_{\hbox{\frak d}})] \equiv
+  {\cal P}_{\syn U}[\underbrace{{\syn P'}({\syn d'})}_{\hbox{\frak d}}]
+  \equiv
+  {\cal P}'[{\syn d'}] .$$
+
+What happens, then, is that, once the ^{complexity} of the {\UTM} is
+achieved, and it is not infinite because its \Processor$U$ continues to
+be a finite automaton, we already have reached the maximum power of
+syntactic analysis that it is possible to reach. No matter how complex
+the {\TM} that we want to imitate is, the {\UTM} can do it. The key
+consists in being able to represent the syntactic \processor$T$ itself
+syntactically, because the \mental algorithm$P_{\syn T}$ effectively
+represents the syntactic transformation that this processor undertakes.
+So, within the \mental grammatical languages$L_0$_{grammatical
+language}, we will call every language whose recognizer is a {\UTM} a
+\Mental universal language$L_{\syn U}$ or, and it is the same thing, a
+\Mental recursive syntax$L_{\syn U}$.
+$$ {\syn L}_{\syn U} = \hbox{Universal Language}
+                     = \hbox{Recursive Syntax} $$
+
+We say that the {\UP}, that is, the processor of a {\UTM}, is a ^{syntax
+engine} because it is capable of executing any syntactic transformation.
+$${\cal P}_{\frak U}=\hbox{Universal Processor}=\hbox{Syntax Engine}$$
+
+
+\Section Expressiveness
+
+We must distinguish between two types of set relation that can apply to
+languages: inclusion, used in the ^[Chomsky] hierarchy of grammars and
+which relates two sets of languages, and ^{expressiveness}, which
+relates two languages, a language being the set of its syntactic
+expressions.
+
+For example, the language that only accepts the sequence~$\frak abc$ is
+a regular \Mental language$L_3$ because there is a finite automaton that
+only accepts this sequence. And this same language is also a grammatical
+\Mental language$L_0$, because there is also a
+ ^[Turing] machine_{\string\string\string\tURING[Turing] machine}
+which only accepts the ^{syntactic expression}~$\frak abc$. Due to this
+type of reasoning, we conclude that all the regular \mental
+languages$L_3$ are \mental grammatical ones$L_0$ and, as a consequence,
+the set of regular languages~$\{ {\syn L}_3 \}$ is included in the set
+of grammatical languages~$\{{\syn L}_0\}$:
+$$ \{ {\syn L}_3 \} \subset \{ {\syn L}_0 \} .$$
+
+On the other hand, though, no \Mental universal language$L_{\syn U}$ can
+accept only the sequence~$\frak abc$, although they can all accept an
+extended version. The possibility of extension requires them to accept
+other sequences. Let us look at this aspect in greater detail.
+
+Let~${\cal P}_{\frak\!abc}$ be the processor of the ^[Turing] machine
+that only accepts the expression~$\frak abc$. Let $\syn U$ be a
+universal ^[Turing] machine_{universal
+\string\string\string\tURING[Turing] machine}, and let ${\syn P}_{\frak
+abc}$ be the syntactic expression that represents the processor~${\cal
+P}_{\frak\!abc}$ in $\syn U$. With this terminology, $\syn U$ will
+accept the expression~${\syn P}_{\frak\!abc}({\frak abc})$:
+$${\cal P}_{\syn U}[{\syn P}_{\frak abc}({\frak abc})] \equiv
+  {\cal P}_{\frak\!abc}[{\frak abc}] \rightarrow \true .
+$$
+Thus, the extended expressions have two parts: the ^{algorithm}, in the
+example~${\syn P}_{\frak abc}$, and the ^{parameters}, which are~$\frak
+abc$ in the example. And we can now affirm that \Mental recursive
+syntax$L_{\syn U}$ accepts the expression~${\syn P}_{\frak\!abc}({\frak
+abc})$, which should be read: `what~$\frak abc$ expresses in the
+language recognized by~${\cal P}_{\frak\!abc}$'. But the \mental
+universal language$L_{\syn U}$ accepts, in addition, other expressions,
+for example ${\syn P}_{\syn U}({\syn P}_{\frak abc}({\frak abc}))$,
+because:
+$${\cal P}_{\syn U}[{\syn P}_{\syn U}({\syn P}_{\frak abc}({\frak abc}))]
+  \equiv {\cal P}_{\syn U}[{\syn P}_{\frak abc}({\frak abc})] \equiv
+   {\cal P}_{\frak\! abc}[{\frak abc}] \rightarrow \true .$$
+
+This is why we say that \mental universal languages$L_{\syn U}$ are more
+expressive than \mental regular ones$L_3$, although they do not include
+them; $\forall{\syn L}_3,{\syn L}_{\syn U}$:
+$$\eqalign{
+   {\syn L}_3 &\prec {\syn L}_{\syn U} \cr
+   \{ {\syn L}_3 \} &\not\subset \{ {\syn L}_{\syn U} \}  . \cr
+ }$$
+
+The \mental universal language$L_{\syn U}$ is the most expressive of the
+languages with grammar because it can express everything that any other
+\mental grammatical language$L_0$ can. This is because the syntactic
+transformations of any other language, whatever they may be, can be
+expressed in \mental recursive syntax$L_{\syn U}$ and be interpreted as
+such. And, in conclusion, no \mental grammatical language$L_0$ can be
+more expressive than a \mental universal language$L_{\syn U}$;
+$\forall{\syn L}_0,{\syn L}_{\syn U}$:
+$${\syn L}_0 \preceq {\syn L}_{\syn U} .$$
+
+In a way, \mental universal languages$L_{\syn U}$ are too expressive.
+They are so expressive that, if the expression~$\frak x$ is paradoxical
+in any \Mental grammatical language$L_0$, for example in the language
+recognized by the {\TM} whose processor is~${\cal P}_{\syn T}$, then the
+expression~${\syn P}_{\syn T}({\frak x})$ is paradoxical in \Mental
+recursive syntax$L_{\syn U}$:
+$$ {\cal P}_{\syn U}[{\syn P}_{\syn T}({\frak x})] \equiv
+   {\cal P}_{\syn T}[{\frak x}] \rightarrow \infty .$$
+This proves that there are paradoxes in all \mental recursive
+syntaxes$L_{\syn U}$.
+
+\break
+
+Besides, paradoxes_{paradox} that can be expressed in a \Mental
+universal language$L_{\syn U}$ are pertinacious, because it is not even
+possible to recognize them all. In order to prove this, it is necessary
+to show that reflexive paradoxes can be expressed in a
+\mental recursive syntax$L_{\syn U}$. A ^{reflexive paradox}, such as `this
+sentence is false', is a paradox that refers to itself, so we can also
+call it self-referential_{self-reference} paradox, or even
+^[Epimenides]'^(Northrop1944) paradox, ^[Epimenides] being a Cretan who
+said, as the story goes, that everything Cretans say is a lie.
+
+
+\Section Recursivity
+
+Reference_{reference} allows us, in syntactic expressions, to use names
+as abbreviations of other expressions, generally longer ones. We call
+the operation of giving a ^{name} to an expression ^{definition}. Thus,
+for example, if we write the definitions after a colon, with~$n$ being
+the name of the syntactic expression~$\syn n$:
+$$ {\cal P}_{\syn U}[{\frak e} n {\frak o} : n = {\frak n} ]
+   \rightarrow
+   {\cal P}_{\syn U}[{\frak eno} : n = {\frak n} ] .$$
+It is sufficient for us that the definitions of the names are fixed,
+that is, that they cannot be changed. To prove that any {\UTM} can use
+names, it is enough to show that a ^[Turing] machine exists that is
+capable of substituting a name with an expression. That is, we only have
+to show that it is possible to design a ^{dictionary}~$\syn D$ ^[Turing]
+machine that, given a name, returns its expression:
+$$ {\cal P}_{\syn U}[{\syn P}_{\syn D}(n)] \equiv
+   {\cal P}_{\syn D}[n] \rightarrow {\frak n} .$$
+Thanks to definitions, \mental recursive syntaxes$L_{\syn U}$ are
+extensible_{extensibility}.
+
+The other necessary requirement for being able to express reflexive, or
+self-referential, paradoxes, is that syntactic transformations
+themselves can be syntactically expressed, as is the case in
+\mental universal languages$L_{\syn U}$. Because then the ^{algorithm}
+that represents a syntactic transformation can be given a name, and this
+same name can appear in the definition of the algorithm itself, a
+procedure that is called ^|recursivity|, and gives its name to
+\mental recursive syntaxes$L_{\syn U}$_{recursive syntax}.
+
+
+\def\algStop{\inmmode$\syn H$}
+\def\algPdox{\inmmode$\syn Z$}
+
+\Section Reflexive Paradoxes
+
+So we can now show that, in a \Mental universal language$L_{\syn U}$, it
+is impossible to recognize all of the paradoxes. We will show this by
+\latin{reductio ad absurdum}, that is, we will examine what would happen
+if an ^{algorithm}~{\algStop} actually existed that always stopped and
+said, about any ^{syntactic expression}~$\frak w$, whether the {\UTM}
+would stop or not, when $\frak w$ was written on the tape. If the {\UTM}
+stopped, the result of {\algStop} would be {\true}; if it did not stop,
+then the result would be {\false}, where $\syn D$ is a ^{dictionary}
+with definitions:
+$$\algStop \cases{
+ {\cal P}_{\syn U}[{\algStop}({\frak w}) : {\syn D}] \rightarrow \true
+   & if ${\cal P}_{\syn U}[{\frak w} : {\syn D}]$ would stop; \cr
+ {\cal P}_{\syn U}[{\algStop}({\frak w}) : {\syn D}] \rightarrow \false
+   & if ${\cal P}_{\syn U}[{\frak w} : {\syn D}] \rightarrow\infty$ .\cr
+}$$
+
+If {\algStop} existed, then we could also define another
+algorithm~{\algPdox}, in the following way:
+$$ {\algPdox}({\frak y}) =
+  {\bf if\;} {\algStop}({\frak y})
+  {\;\bf then\;} {\it loop\,forever}
+  {\;\bf else\;} {\it stop}
+  {\;\bf end\;} .$$
+To prove that, if {\algStop} were an algorithm, we could define
+{\algPdox}, we need to show that in a {\UTM} algorithms that use other
+algorithms can be defined. This is not difficult, given their
+universality. We also need to show that an {\bf if} can be defined, for
+which it is sufficient to see that it is possible to construct a {\TM}
+that does this. Let us accept these matters as proven.
+
+What would happen if we wrote the expression
+ ${\algPdox}(Z):Z={\algPdox}(Z)$, which is self-referential,
+ on the {\UTM} tape?
+If the {\algStop} algorithm behaves as we have said, then we only have
+to study two possible cases.
+\point If ${\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$ is {\true},
+that means, according to the definition of {\algStop}, that the expression
+ ${\algPdox}(Z): Z={\algPdox}(Z)$
+will make the {\UTM} stop, but, according to the definition of
+{\algPdox}, it depends on how the {\UTM} resolves the expression
+ ${\algStop}(Z): Z={\algPdox}(Z) \rightarrow
+  {\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$,
+that we are supposing is {\true}, so that what it will do is
+\latin{loop forever}, that is, not stop.
+\point If, on the contrary, ${\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$
+is {\false}, then, according to the definition of {\algStop}, with
+${\algPdox}(Z): Z={\algPdox}(Z)$ the {\UTM} should not stop, but,
+because it is {\false}, according to the definition of {\algPdox}, the
+{\bf else} branch would be executed and it would \latin{stop}.
+
+\noindent What this contradiction means is that the algorithm~{\algStop}
+cannot exist as we have defined it and, therefore, that within a
+universal language it is impossible to definitively determine whether an
+expression is paradoxical or not. And with this we have proven that, in
+recursive syntaxes, paradoxes are pertinacious.
+
+
+\Section Recursive Syntax
+
+To end this visit to the ^{theory of computation}, which we could with
+all propriety call the ^{theory of syntax}, we will locate the set of
+universal languages_{universal language}, $\{ {\syn L}_{\syn U} \}$, in
+the more general set of grammatical languages_{grammatical language},
+$\{ {\syn L}_0 \}$.
+
+We can divide the set of grammatical languages~$\{ {\syn L}_0 \}$ in two
+other disjoint sets: the set of decidable languages_{decidable
+ language}~$\{ {\syn L}_{\syn D} \}$
+and the set of undecidable languages_{undecidable
+ language}~$\{ {\syn L}_{\syn I} \}$:
+$$\eqalign{
+ \{ {\syn L}_{\syn D} \} \cup \{ {\syn L}_{\syn I} \} &= \{ {\syn L}_0 \}\cr
+ \{ {\syn L}_{\syn D} \} \cap \{ {\syn L}_{\syn I} \} &= \hbox{\O} . \cr}
+$$
+^[Carroll] and ^[Long]^(Carroll1989) use the notation~${\cal
+H}_{\Sigma}$ for the set of decidable languages, ${\cal H}_{\Sigma} = \{
+{\syn L}_{\syn D} \}$, which are the languages recognized by the {\TMes}
+that always stop, and which they place in the ^[Chomsky] hierarchy
+between the non-restricted grammatical languages~$\{{\syn L}_0
+\}$ and the context-sensitive languages~$\{ {\syn L}_1 \}$:
+$$ \{ {\syn L}_1 \} \subset
+   \{ {\syn L}_{\syn D} \} \subset
+   \{ {\syn L}_0 \} .$$
+
+Paradoxes cannot be expressed in any \Mental decidable language$L_{\syn
+D}$, because all of the expressions_{syntactic expression} are
+decidable. On the contrary, paradoxes exist in all of the \mental
+undecidable languages$L_{\syn I}$. As paradoxes can also be expressed in
+all of the \mental recursive syntaxes$L_{\syn U}$_{recursive syntax}, as
+we showed in ^>Reflexive Paradoxes>, it turns out that all of the
+\mental universal languages$L_{\syn U}$ are \mental undecidable$L_{\syn
+I}$, although not all \mental undecidable languages$L_{\syn I}$ are
+\mental universal$L_{\syn U}$, because there are {\TMes} that neither
+stop always nor are universal:
+$$ \{ {\syn L}_{\syn U} \} \subset
+   \{ {\syn L}_{\syn I} \} \subset
+   \{ {\syn L}_0 \} . $$
+
+We also find among the \mental undecidable languages$L_{\syn I}$ those
+that have errors; for example the language that a {\TM} accepts that
+does not stop only when it finds a sequence of one hundred consecutive
+ones, due, let's say, to a slip in designing the state that corresponds
+to one hundred ones.
+
+
+\Section Algorithms
+
+In ^>Semantics and Syntax>, we defined a ^{symbolic logic} as the logic
+capable of representing problems, resolutions, and solutions, using two
+layers: syntax and semantics. Semantics_{semantics} has the solutions
+and ^{syntax} has the problems and the resolutions. The resolutions take
+the ^{problem} expressed syntactically and transform it syntactically
+until the syntactic expression of a ^{solution} is reached. Thus, the
+^{resolution} is a syntactic transformation.
+
+We give the name ^|algorithm| to the expression of a syntactic
+transformation that, in principle, can be a ^{syntactic expression} or a
+meta-syntactic expression. The first alternative takes us (as we saw
+from ^>The Chomsky Hierarchy>, to ^>Recursive Syntax>) to \mental
+recursive syntaxes$L_{\syn U}$_{recursive syntax}, capable of maximum
+^{expressiveness}, but which cannot avoid paradoxes. Paradoxes_{paradox}
+are syntactic expressions with no meaning, inconclusive, unresolvable:
+that is, they are resolutions that do not achieve a solution. So
+^[Russell] tried, with his ^{theory of types}, the second alternative to
+avoid the ^{reflexive paradox} that he himself had discovered in set
+theory (see ^[Quine]\footnote{_(Quine1940), page~163 and following.}):
+ $$R = \{ x?\; x \not\in x\} \Longrightarrow
+  ( R \in R \Longleftrightarrow R \not\in R ) .$$
+But the resulting ^{typed logic} is complicated, which induces error,
+limits the logic's expressiveness, and, what is worse, requires an
+unlimited number of meta-meta-\dots-syntaxes, so that it is, itself,
+paradoxical.
+
+It is better to tolerate paradoxes and use recursive syntaxes, which are
+simpler and more expressive because, in practice, neither the ^{tape} of
+the {\TM} is infinite, nor is the ^{time} available to reach a solution
+unlimited, so that the resolutions that require more tape than is
+available, or too much time, even though they would be capable of
+reaching a solution in other circumstances, are as useless or harmful as
+paradoxes. All in all, paradoxes are no worse than bad resolutions.
+
+
+\Section Reason
+
+The {\inquirers} job is to describe with the greatest possible precision
+the problem that the {\subject} faces. Reason~$\syn R$ receives the
+representation of the \Mental problem$X$ from the {\inquirer}; this
+representation is necessarily syntactic. And {\reason} produces, as a
+result, the representation of the resolution, that is the ^{algorithm}
+that the {\mind} has to execute, which is also syntactic. So, if
+{\reason} should have the maximum generality, as we concluded in ^>The
+Symbolic Subject>, then {\reason} must be a ^{syntax engine}, or
+universal processor~${\cal P}_{\frak U}$, capable of transforming any
+^{syntactic expression} into any other one, as we saw in ^>The Universal
+Turing Machine>:
+$${\frak R}={\cal P}_{\frak U} .$$
+This means that the {\subjects} ^{internal logic} or at least the
+internal logic of its {\reason}, is a symbolic logic, with semantics and
+\Mental recursive syntax$L_{\syn U}$.
+
+Finally, the {\mind} has to apply the resolving algorithm proposed by
+{\reason} and obtain the solution, in the form of behavior that the
+{\body} can execute so that, if everything has gone well, it will
+effectively solve the problem that the {\subject} is facing.
+
+In the semantics of the ^{symbolism} of the {\subjects} {\reason}, the
+following have ^{meaning}: the symbols that refer to the {\minds}
+resources, such as the {\bodys} behaviors, the {\modelers} models, the
+forecasts_{foresight} of {\reality}, and the {\simulators} simulations;
+and the symbols that refer to the conditions that {\reason} can
+consider, as in the goodness or badness of the behaviors and the
+forecasts. Other symbols represent concepts
+     \vadjust{\penalty-1000}%
+of the ^{theory of the problem}, such as, for example, the ^{freedom} of
+the problem, represented as `?', which has no meaning, because it
+indicates to the {\reason} that the syntactic expression in which it is
+found is open, that is, its meaning is not closed, and that, as a
+result, it is not ready to be passed on to the {\mind}.
+
+
+\Section Comparing Selves
+
+We have completed a circle in the ^{exit path}. We started from the
+^{self}, and went beyond the self when we discovered, in _>I Am Alive>,
+that the self is not all of the ^{subject}, but that the self is only
+the ^{problem of the subject}. The subject is alive, it is part of
+^{life}, so that the problem of the subject is part of the ^{problem of
+survival} that defines life. The problem of survival is an ^{apparent
+problem} that, specified in ^{time} and in ^{space}, we formalized in
+_>Formalizing the Apparent Problem>, and we resolved it. And now the
+resolution of the formalized apparent problem takes us to the
+{\subject}, and finally back to the {\self}. But, in order to complete
+the circle accurately, we need to establish that the formal {\self} that
+we found coincides with that original self that we started out from at
+the beginning, in _>What Am I?>, and that we defined as ^{freedom} to
+not die, in _>I Am Freedom to Not Die>, and that was syntactic and
+paradoxical, as we saw in _>I Am in Syntax> and _>I Am Paradoxical>.
+
+The formal {\subject} found coincides with the original subject, since
+we only had two pieces of information about this original subject (see
+^>I Am Alive>), and in both pieces it coincides with the formal subject.
+We knew that the original subject, like the formal {\subject}, has a
+^{symbolic logic}. And we also knew that the problem of the original
+subject is its original self, just as the problem of the formal
+{\subject} is its formal {\self}; it is the same whenever both selves
+coincide, and we will prove this now.
+
+For the formal {\subject}, the formal {\self} turns out to be the best
+representation that the {\subject} itself can make of the problem that
+it is facing, which is the apparent problem of survival. As freedom is
+inherent to every problem, and the final condition of the problem of
+survival is to live, then the formal {\self} could be defined in the
+same way as we defined the original self, that is, as freedom to not
+die.
+
+The formal {\self} is also syntactic, since any representation of a
+problem has to be syntactic, as we already know (see ^>Semantics and
+Syntax>), because it must represent freedom, which is tautologically
+free of meaning.
+
+In ^>The Formal Subject>, we established that the condition of the
+inquirer cannot be conclusively verified, that is, that the
+representation of an apparent problem, given its nature, is never
+definitive. That is why the formal \Mental problem of the subject$X$
+must always be kept open to revision. As a changing problem cannot have
+a definitive solution, we have proven that the formal {\self} is
+paradoxical.
+
+
+\Section Comparing Subjects
+
+In the previous section we compared subjects, and selves, from the exit
+path, and so we have not yet compared the subjects of the exit path with
+their homonyms from the entry path.
+
+The essential characteristic of the formal {\subject} is its capacity to
+^{reason}, that is, to foresee_{foresight} the result of the different
+ways of resolving a problem. A symbolic logic in which to represent
+problems and resolutions, as well as solutions, is indispensable for
+this. The evolutionary subject, seen from _>Words> to _>The Subject's
+World Is Symbolic>, had a symbolic logic available, so it had to be
+considered as a specific case of the formal {\subject}, with the
+peculiarities derived from its Darwinian heritage. We must remember that
+the evolutionary subject's ^{syntax} rested upon a ^{reality} of things
+with ^{meaning} inherited from the knower, while the only thing we can
+affirm about the {\subjects} syntax is that it rests upon a ^{semantic}
+layer inherited from the {\knower} where the solutions should be. Thus,
+while in evolutionary syntax we find sentences_{sentence} with
+nouns_{noun}, verbs_{verb}, adjectives_{adjective}, and
+pronouns_{pronoun}, we know that formal syntax must be
+recursive_{recursive syntax}, ${\syn L}_{\syn U}$. A recursive syntax
+has a maximum of expressiveness but also pertinacious paradoxes. And we
+know that to deal with such a syntax, we need a {\UP}, or ^{syntax
+engine}, that is the processor of a {\UTM}.
+
+
+\Section The Subjective Loop
+
+Having reached the end of the ^{exit path}, we can now make some global
+appraisals. The exit path is circular_{subjective loop}. It starts from
+the ^{self}, defined as a ^{problem}, then goes to the ^{subject} and,
+from here, to ^{life}, defined as an ^{apparent problem}, where the
+first part, definitely the exit, finishes. But the ^{resolution} of the
+apparent problem of survival, which goes through five stages, ends at
+the {\subject} with its {\self}, so that this second part of the exit
+path returns to the beginning, as we showed in ^>Comparing Selves>, and
+runs in the same direction as the entry path.
+
+$$\vbox{\everycr={}\tabskip=0pt \lineskip=0pt
+  \halign{&\hfil#\hfil\cr
+   Self& $\,\rightarrow\,$& Subject$\,$& \rightarrowfill&
+    $\,$Problem of Survival\cr
+   $\parallel$& &$\parallel$&  &$\parallel$\cr
+   \frakx X& $\leftarrow$& ${\cal A}_4$& $\leftarrow$%
+    ${\cal A}_3$$\leftarrow$${\cal A}_2$$\leftarrow$%
+    ${\cal A}_1$$\leftarrow$${\cal A}_0$$\leftarrow$&
+    Apparent Problem\cr}}$$
+
+\breakif2
+
+And so the circle is completed, and now we can contemplate as a whole
+the fundamental postulate of the ^{theory of subjectivity}, in other
+words, that life, or the ^{problem of survival}, which is the same
+thing, is an ^{apparent problem} (see ^>The Problem of Survival>). We
+will make use of a general observation that applies to any theory that
+uses problems for explanations: if any concept corresponds with an
+apparent problem, it must be a primitive concept that the theory leaves
+undefined, because it cannot provide any information about it. From this
+observation, we can see that the need to use problems as explanations as
+well as the election of ^{life} as the primitive undefined concept of
+the theory of subjectivity are both consequences of defining the self as
+freedom to not die. Because the self, being freedom and condition, is a
+problem; and being the condition of not dying, it remits us to life. It
+remits us to life because the self, as it is already defined, cannot be
+the primitive undefined concept that life, ineffable, can be.
+
+But because the path is circular, whoever wishes to can go backwards on
+it. If the self is explained starting from the apparent problem of
+survival, then the consequence is that the self must be defined as
+freedom to not die.
+
+On the other hand, the resolution of the apparent problem reach\-es the
+{\subject} with its {\self}, which constructively proves that a
+problematic theory is sufficient to explain the nature of the subject
+and of the self.
+
+
+\Section Levels
+
+The five stages of the resolution of the apparent problem can be grouped
+in three levels. The {\mechanism} is nothing more than the starting
+point and forms, by itself, the reference level. The following level, to
+which the {\adaptor} and the {\learner} belong, appears with the
+{\body}, which is capable of behaving as various \corporal
+mechanisms$A_0$ and, in this way, we can say that it includes the
+previous reference level (\EPA2).
+$$\hbox{Adaptor $\aut A_1$}\llave{
+   Governor $\aut G$\cr
+   Body $\aut B$\lopen\langle{Mechanism $\aut A_0$}}$$
+
+\vfill\break
+
+\noindent Finally, the third level, in which the {\knower} and the
+{\subject} are to be found, originates in the {\mind} which, being
+capable of resolving problems like the \corporal learners$A_2$, like the
+\corporal adaptors$A_1$, and like the \corporal mechanisms$A_0$, contains
+the two levels that precede it (\EPA6).
+$$\hbox{Knower $\aut A_3$}\llave{
+   Intelligence $\syn A$\cr
+   Mind $\syn M$\lopen\langle{
+    Learner $\aut A_2$\cr
+    Adaptor $\aut A_1$\cr
+    Mechanism $\aut A_0$}}$$
+
+Within each of the two-stage levels, the first stage comprehends the
+previous level and the second stage interiorizes it. Thus, the
+{\learners} {\simulator} contains interiorizations of the {\bodys}
+behaviors and of the exterior, and that is why the {\modelers} task is
+to compose {\reality}, which is, precisely, the interior representation
+of the exterior behavior (\EPA3).
+$$\hbox{Learner $\aut A_2$}\llave{
+   Governor $\aut G$\llave{
+    Modeler $\aut M$ $\to$ Reality $\aut R$\cr
+    Simulator $\aut S$ [Body $\aut B$]}\cr
+   Body $\aut B$\lopen\langle{Mechanism $\aut A_0$}}$$
+And, similarly, the {\subjects} {\reason} has syntactic and recursive
+representations of its {\minds} resolutions and of the exterior problem.
+The {\inquirers} task is to look for the problem that it is facing, that
+is, the problem of the subject, or the {\self}, which is, precisely, the
+internal representation of the external problem (\EPA7).
+$$\hbox{Subject $\aut A_4$}\llave{
+   Intelligence $\syn A$\llave{
+    Inquirer $\syn I$ $\to$ Self $\syn X$\cr
+    Reason $\syn R$ [Mind $\syn M$]}\cr
+   Mind $\syn M$\lopen\langle{
+    Learner $\aut A_2$\cr
+    Adaptor $\aut A_1$\cr
+    Mechanism $\aut A_0$}}$$
+
+It turns out that the {\subject}, which culminates the resolutive
+process of the apparent problem, contains it completely. Because the
+{\mind} is interiorized in the {\reason}, and the mind includes all of
+the preceding stages, and therefore also contains the {\simulator},
+which interiorizes the {\body}.
+
+
+\Section Layers
+
+Symbolism's construction in two layers (seen in ^>Semantics and Syntax>,
+and in ^>The Symbolic Subject>), which is at the origin of the
+resolution levels of the apparent problem, allows us to discover some
+correpondences in the subject's ^{world}, presented in ^>The World>. The
+{\body} corresponds in the layer of behavior, which is the layer of
+solutions and which we call semantics, to the {\mind} in the layer of
+resolutions, which we call syntax. And the {\self} corresponds to
+{\reality}.
+$$\vbox{\def\uc#1{\relax\uppercase{#1}}
+ \def\:#1#2:#3#4.{\uc#1#2_{#1#2}& $\equiv$&\uc#3#4_{#3#4}\cr}
+ \def\;#1 (#2);#3 (#4);{#1_{#2}& $\equiv$& #3_{#4}\cr}
+ \setbox0=\hbox{$\mathop{\cal A}\nolimits_4$ }
+ \def\.#1#2 $#3#4$.#5#6 #7$#8#9$.{\uc#1#2_{#1#2}%
+  \hbox to\wd0{\hfil$\mathop{\cal #3}\nolimits#4$}&
+  $\equiv$&
+  \hbox to\wd0{$\mathop{\frak #8}#9$\hfil}\uc#5#6_{#5#6} #7\cr}
+ \halign{&\hfil#&\hfil\quad#\quad\hfil&#\hfil\crcr
+ \.adaptor $A_1$.knower {$\aut A_3$}$E_1$.
+ \.governor $G$.intelligence $A$.
+ \.body $B$.mind $M$.
+ \.learner $A_2$.subject {$\aut A_4$}$E_2$.
+ \.modeler $M$.inquirer $I$.
+ \.simulator $S$.reason {${\cal P}_{\syn U}$}$R$.
+ \.reality $R$.self $X$.
+ \:semantics:syntax.
+ \:behavior:problem.
+ \:solution:resolution.
+ \:program:algorithm.
+ \:thing:concept.
+ \:practice:theory.
+ \:finite:infinite.
+ \:physics:metaphysics.
+ \:data:information.
+ \:change:permanence.
+ \;Res Extensa (res extensa);Res Cogitans (res cogitans);
+}}$$
+
+
+\Section The World Is an Enigma
+
+The {\inquirer} occupies the highest place in the {\subject} which, in
+turn, is the peak of the resolutive process of the apparent problem. And
+the {\inquirers} task is to ask questions, the first being `what am I?'
+This may be why ^[Aristotle]^(Aristotle-IV) began his ^<Metaphysics> by
+declaring that ``all men by nature ^{desire} to know''.
+
+The subject is curious_{curiosity} because he understands the world and
+its situations as problems to be resolved. For the subject, the world is
+an enigma.
+
+
+\endinput

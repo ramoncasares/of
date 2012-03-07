@@ -1,0 +1,31 @@
+# .gitignore (RMCG20120307)
+# ignore generated files
+*.pdf
+*.ps
+*.dvi
+# except logo file
+!tex/cc-by-sa-www.pdf
+# ignore archives
+*.tar
+*.gz
+*.bz2
+*.zip
+*.Z
+# ignore auxiliaries
+auxiliar.*
+*~
+*.log
+# ignore figures
+*.jpg
+*.png
+*.svg
+*.eps
+# ignore fonts
+*.pfb
+*.tfm
+*.map
+# ignore dirs
+admin/
+letters/
+nancy/
+# end of file

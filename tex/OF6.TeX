@@ -1,0 +1,1388 @@
+% OL6.TEX (RMCG20000731)
+
+\Part Conclusion
+
+
+% Ideograma de camino (tao) pequeño
+\MTbeginchar(9pt,12pt,0pt);
+ \MT: save border, ladderw, ladderh, gap;
+ \MT: border = w/10; gap = h/20;
+ \MT: ladderw = 3w/8; ladderh= h/2;
+ \MT: % pickup thick_pen;
+ \MT: pickup pencircle xscaled0.75pt yscaled0.4pt rotated 30;
+ \MT: z1bl = (w/2,h/8); % One for the ladder
+ \MT: z1tr - z1bl = (ladderw,ladderh);
+ \MT: z1tl - z1bl = (0,ladderh);
+ \MT: z1br - z1bl = (ladderw,0);
+ \MT: draw z1tl .. z1bl; draw z1tr .. z1br;
+ \MT: draw z1tl .. z1tr; draw z1bl .. z1br;
+ \MT: z1mo = 2/3[z1bl,z1tl]; z1md = 2/3[z1br,z1tr] - (gap,0);
+ \MT: z1no = 1/3[z1bl,z1tl]; z1nd = 1/3[z1br,z1tr] - (gap,0);
+ \MT: draw z1mo .. z1md; draw z1no .. z1nd;
+ \MT: z2o = (0,h/8); z2d = (w,0); % Two for the base
+ \MT: x2m1 = w/4; x2m2 = 3w/4; y2m1 = y2o; y2m2 = y2d;
+ \MT: draw z2o{right} .. z2m1 .. z2m2 .. z2d;
+ \MT: y3ao = 4/3[y1bl,y1tl]; % Three for the crown
+ \MT: x3ao = x1tl - border; z3ad = (w,y3ao);
+ \MT: draw z3ao .. z3ad;
+ \MT: z3eo = z1tl+(0,gap); z3em = 1/2[z3ao,z3ad]; z3ed = (w-border,h);
+ \MT: draw z3eo .. z3em .. z3ed;
+ \MT: z3io = (x3ao,y3ed); z3id = 1/2[z3ao,z3ad];
+ \MT: draw z3io .. z3id;
+ \MT: x4a = x4i; y4e = 1/2[y4i,y4a]; % Four for the circumflex
+ \MT: z4e = 1/2[z3ao,z3ed] - (3w/8,gap);
+ \MT: y4a - y4i = h/8; % circumflex height
+ \MT: x4e - x4a = w/8; % circumflex width
+ \MT: draw z4a -- z4e -- z4i;
+ \MT: x5e = x1tl - w/8; % Five for the seven; seven x position
+ \MT: x5a = x5u; x5e - x5a = w/5; % seven width
+ \MT: x5i = 1/3[x5a,x5e]; x5o = 2/3[x5a,x5e];
+ \MT: y5a = y1tl - gap; y5u = y1bl; % seven y position
+ \MT: y5a = y5e; y5i = 2/3[y5u,y5a]; y5o = 1/3[y5u,y5a];
+ \MT: draw z5a .. z5e; draw z5e .. z5i .. z5o .. z5u;
+ \MT: %pickup thin_pen; % The bounding box
+ \MT: %draw (0,0) -- (w,0) -- (w,h) -- (0,h) -- cycle;
+\MTendchar;
+\newbox\taobox \setbox\taobox=\hbox{\raise-1.5pt\box\MTbox}
+\def\tao{\copy\taobox}
+
+\Section Tao
+
+The ^{Chinese} ideogram \tao, which sometimes is transcribed `^{tao}',
+other times `^{dao}', or even, in ^{Japanese}, `d\=o', means ^{path},
+and also method and law. It is the central concept of ^{Taoism}^(LaoZi),
+from which it takes its name, and it is fundamental to ^{Buddhism} as
+well.
+
+In general, oriental ^{philosophy} is introspective, because it starts
+out observing the pure ^{self}. And because it attends solely to the
+self, it finds absolute ^{nothingness}, that is, it finds complete
+^{freedom} without limits, in which it is even possible to reconcile
+opposites, to reconcile yes and no (see ^>I Am Paradoxical>). This is
+why the dialectic of \latin{yin} and \latin{yang} is so important, or in
+^{Zen} Buddhism, paradoxes are important (see ^[Suzuki]^(Suzuki1934)).
+
+Although later developments of Buddhism and Taoism differ from the exit
+path of this ^{theory of subjectivity}, the starting point of the three
+paths is the same: self. But if we only see the freedom of the self,
+which is its will, then it is impossible to go beyond it. Because if
+everything is freedom, if freedom is absolute, then there are no limits,
+and you cannot go beyond something that doesn't have limits. Recognizing
+limits is enough to make a situation completely different. And we have
+already seen where defining the self as freedom to not die takes us.
+% Ideograma de camino (tao)
+$$\MTbeginchar(30pt,40pt,0pt);
+ \MT: save border, ladderw, ladderh, gap;
+ \MT: border = w/10; gap = h/20;
+ \MT: ladderw = 3w/8; ladderh= h/2;
+ \MT: % pickup thick_pen;
+ \MT: pickup pencircle xscaled1.4pt yscaled0.7pt rotated 30;
+ \MT: z1bl = (w/2,h/8); % One for the ladder
+ \MT: z1tr - z1bl = (ladderw,ladderh);
+ \MT: z1tl - z1bl = (0,ladderh);
+ \MT: z1br - z1bl = (ladderw,0);
+ \MT: draw z1tl .. z1bl; draw z1tr .. z1br;
+ \MT: draw z1tl .. z1tr; draw z1bl .. z1br;
+ \MT: z1mo = 2/3[z1bl,z1tl]; z1md = 2/3[z1br,z1tr] - (gap,0);
+ \MT: z1no = 1/3[z1bl,z1tl]; z1nd = 1/3[z1br,z1tr] - (gap,0);
+ \MT: draw z1mo .. z1md; draw z1no .. z1nd;
+ \MT: z2o = (0,h/8); z2d = (w,0); % Two for the base
+ \MT: x2m1 = w/4; x2m2 = 3w/4; y2m1 = y2o; y2m2 = y2d;
+ \MT: draw z2o{right} .. z2m1 .. z2m2 .. z2d;
+ \MT: y3ao = 4/3[y1bl,y1tl]; % Three for the crown
+ \MT: x3ao = x1tl - border; z3ad = (w,y3ao);
+ \MT: draw z3ao .. z3ad;
+ \MT: z3eo = z1tl + (0,gap); z3em = 1/2[z3ao,z3ad]; z3ed = (w-border,h);
+ \MT: draw z3eo .. z3em .. z3ed;
+ \MT: z3io = (x3ao,y3ed); z3id = 1/2[z3ao,z3ad];
+ \MT: draw z3io .. z3id;
+ \MT: x4a = x4i; y4e = 1/2[y4i,y4a]; % Four for the circumflex
+ \MT: z4e = 1/2[z3ao,z3ed] - (3w/8,gap);
+ \MT: y4a - y4i = h/8; % circumflex height
+ \MT: x4e - x4a = w/8; % circumflex width
+ \MT: draw z4a -- z4e -- z4i;
+ \MT: x5e = x1tl - w/8; % Five for the seven; seven x position
+ \MT: x5a = x5u; x5e - x5a = w/5; % seven width
+ \MT: x5i = 1/3[x5a,x5e]; x5o = 2/3[x5a,x5e];
+ \MT: y5a = y1tl - gap; y5u = y1bl; % seven y position
+ \MT: y5a = y5e; y5i = 2/3[y5u,y5a]; y5o = 1/3[y5u,y5a];
+ \MT: draw z5a .. z5e; draw z5e .. z5i .. z5o .. z5u;
+ \MT: %pickup thin_pen; % The bounding box
+ \MT: %draw (0,0) -- (w,0) -- (w,h) -- (0,h) -- cycle;
+\MTendchar;
+\box\MTbox$$
+
+
+\Section The Paths
+
+The ^{exit path}, which gives priority to ^{introspection}, is the
+^{oriental} ^{path}. It presupposes the ^{subject} and its
+solipsist_{solipsism} schools evade the object. The ^{entry path}, which
+prefers the ^{phenomenon}, is the ^{occidental} path. It takes the
+^{object} for granted and its materialist_{materialism} versions do
+without the subject.
+
+If oriental philosophies cannot go beyond the unlimited ^{freedom} of
+the pure self, occidental philosophies cannot enter into the freedom of
+the self. Thus, for example, occidental natural ^{philosophy}, or to
+abbreviate, ^{science}, exclusively explains the physical phenomena that
+can be repeated under experimental conditions. In this way, it
+proscribes freedom, although it can predict_{prediction} what the result
+of a physics experiment will be with precision and profitably. This is
+why present-day science cannot explain the self.
+
+The oriental path is insufficient, and the occidental path is, too. One
+has freedom without condition, and the other has condition without
+freedom. Synthesis is a problem, precisely because the synthesis of
+freedom and condition is a problem. This is why only the circular path
+is complete: the circular path is the ^{subjective loop} (seen in ^>The
+Subjective Loop>), that starts out from the ^{self} and goes beyond it
+to arrive at the ^{apparent problem} of survival, which is the source of
+meaning, as we will state in _>The Problem Is the Source of Meaning>,
+and that, returning to the self, gives meaning to each of its stages
+and, finally, to the very self.
+
+
+\Section The Problematic Explanation
+
+Thinking about recent history can help overcome the explanatory problems
+of present-day ^{science}. The ^{material explanation}, seen in ^>The
+Material Explanation>, that ruled in science until the quantum
+revolution, explains by thing-ifying_{thing-ify}, that is, it keeps
+explaining concepts until it reaches things, because things are what
+have a natural meaning (see ^>Things and Concepts> and ^>Semantics and
+Syntax>). The ^{automatic explanation}, discovering problems in
+thing-ifying (see ^>The Automatic Explanation>), does away with the
+meanings of the ^{knower} and tries to avail itself solely of the
+learner's_{learner} foresights_{foresight}. This step backward avoids
+using the inexact, unreasoned models achieved during evolution (see
+^>Knowledge Is Provisional>), but it produces explanations with no
+meaning, that is, descriptions. True progress is achieved not by going
+backward from the knower to the learner, but by advancing to the
+^{subject}. This progress needs, then, a theory of the subject. And this
+^{theory of subjectivity} works.
+
+\breakif1
+
+The proposal is, first, that science give up the automatic explanation,
+that is, that its final products stop being automata, which are systems
+of data that predict_{prediction} mechanically, and second, that science
+adopt the ^|problematic explanation|, so that science produces, as a
+consequence, problems, resolutions, and solutions. The solutions can be
+formally indistinguishable from the final products that science produces
+today, that is, automata, whether they be in the form of differential
+equations or any other; but by framing themselves explicitly in a
+^{problem}, that in the end must be the ^{problem of survival}, they
+will achieve a ^{meaning} that they do not have at present.
+
+
+\Section Scientific Theories
+
+This is, of course, one way of overcoming the enormous obstacle that
+^[Gödel] discovered at the foundations of ^{mathematics}, and that all
+^{science} shares.
+%
+^[Gödel]^(G\"odel1931) showed, with his ^{undecidability} theorem, that
+there are undecidable propositions in any theory that includes
+^{arithmetic}; these are propositions whose truth or falsehood the
+theory itself cannot determine, that is, paradoxes_{paradox}. The
+corollary for ^{physics} is immediate: physics includes arithmetic and,
+therefore, cannot be complete. This same argument can be applied
+immediately to all the theories that use arithmetic, and can be
+generalized, following ^[Turing]^(Turing1936) (see ^>Reflexive
+Paradoxes>), to all theories that have to be expressed in recursive
+symbolisms, so that all the sciences are affected. But the case of
+physics is especially surprising because, in spite of the famous
+mathematical demonstration in the year 1931, there are still important
+physicists, such as ^[Hawking]^(Hawking1988), who think that a ^{unified
+theory} that describes the universe completely can exist.
+
+On the other hand, for the ^{problematic explanation}, scientific
+^{knowledge} remains subordinated to life. ^[Gödel]'s undecidability
+theorem is nothing more than the confirmation that mathematics and the
+sciences necessarily inherit the paradoxical nature of ^{life} and of
+the ^{self} (seen in ^>Life Is Paradoxical> and in ^>I Am Paradoxical>).
+So we already know that it is the paradoxical natures of the self, of
+life, of knowledge, and of science, that sustain their problematic
+character and keep all of these matters inconclusive and incomplete,
+that is, open, free, and alive.
+
+It is ^{absurd} to believe that everything that happens is expressible
+symbolically and that this expression can completely exhaust the
+^{phenomenon}, because it has been proven mathematically that it is
+impossible.
+
+
+\Section The Subject Is Free
+
+For the ^{automatic explanation}, the set of differential equations that
+constitutes the theory is all that can scientifically be said about the
+phenomena that this theory describes. The automatic explanation is only
+good for the ^{entry path}, that is, it is useful to explain
+phenomena_{phenomenon}  exterior to the ^{self}, but it is incapable of
+turning the interior self into a phenomenon. This is because freedom is
+completely excluded from the automatic explanation and, consequently,
+the automatic explanation cannot explain the self, which is free; a
+conclusion we already reached in ^>Is the Subject Free?>.
+
+Then we asked ourselves if a ^{mechanism} is free_{freedom}. The answer
+was no; because the mechanism is the prototype of determinism, it would
+not be free. The ^{adaptor} is not free either, we reasoned, because it
+is a mechanism. And the ^{learner}, which is an adaptor, cannot be free
+either. The ^{knower}, whose virtue is that it is capable of imitating
+the learner, the adaptor, and the mechanism, cannot be free either. And
+the ^{subject}, we wondered, can a subject be free? According to the
+automatic explanation of the entry path, (see ^>Mechanisms>), the answer
+was no, because the subject is still a mechanism. Specifically, it is
+the mechanism with a nervous system that models reality, a reality that
+can be used in various ways according to its feelings, and that has a
+symbolic logic with which it can reason.
+
+The situation is very different for the ^{problematic explanation}. It
+is true that a mechanism is not free, but it turns out that a living
+mechanism is not a whole but a part. A living mechanism is a resolver of
+the ^{apparent problem} of survival, and it has no meaning by itself
+apart from the problem; that is, it must be defined as part of the
+problem. Thus, although the live mechanism may be impermeable to the
+freedom of the apparent problem, which it is, it forms part of a system
+that necessarily includes freedom. And, in this sense, the sequence that
+goes from the mechanism to the subject is a process in which the freedom
+of the apparent problem of survival soaks into its resolvers. This
+process reaches its culmination with the subject, because the subject is
+capable of interiorizing the problem itself and, with the problem, its
+freedom. The subject seizes the problem's freedom. The subject is free.
+
+The subject is free, yes, but its freedom is not absolute, it is
+conditioned. In other words, freedom is part of the problem. This means,
+on one hand, that the ^{future} is not determined but open, because it
+depends on decisions made freely; on the other hand, it means that not
+all decisions are equally good or bad. That is, it means that the
+subject's free decisions have diverse consequences and, as we saw in
+^>Knowledge Is Provisional>, these consequences are never entirely
+predictable_{prediction}. If things were any other way, life would be
+easier.
+
+
+\Section Consciousness and Self-Consciousness
+
+For the problematic explanation, the ^{subject} is not a ^{mechanism},
+simply because the subject is free and a mechanism is not. Adding
+^{freedom} makes easy what without it is impossible. The same thing
+happens with consciousness and self-consciousness.
+
+In the entry path, specifically in ^>Consciousness>, when we pointed out
+the distinction made between sensing and seeing_{sight}, we defined
+consciousness as that which the subject sees of the world. Along these
+same lines, self-consciousness would be how the subject sees itself. And
+as the theory of subjectivity shows us that the subject is a resolver of
+the apparent problem of survival, we can make these definitions even
+more precise.
+
+Self-consciousness_|self-consciousness| is the faculty thanks to which a
+^{resolver} represents itself. And ^|consciousness| is the faculty by
+which a resolver represents the complete situation to itself, that is,
+the ^{problem} that it is facing and itself as a resolver. It follows
+from these definitions that only subjects can have consciousness and
+self-consciousness, because they are the only resolvers that, because
+their logic is ^{symbolic logic}, can represent problems as well as
+resolutions. In other words, in order to see a whole thing, a certain
+distance is necessary; and if the thing is one's own situation, then one
+needs a mirror, that is, reflection, in order to achieve this distance.
+
+Therefore the subject is conscious when it sees itself as a problem,
+that is, when the subject sees itself as its self, and knows itself to
+be free. And the subject is self-conscious when it notices that its
+problem is unresolvable, because it is paradoxical and has no solution,
+when the subject knows itself to be mortal.
+$$\vbox{\halign{&\hfil#\hfil\cr
+  I &know that I &am & free & and & mortal\cr
+  I &&am & conscious & and & self-conscious\cr}}$$
+
+These are easy conclusions for the ^{problematic explanation}, but they
+are impossible for the ^{automatic explanation} or for the ^{material
+explanation}.
+
+
+\Section Knowledge Is Cumulative
+
+The ^{subject} represents to itself the problem that it is facing. The
+problem the subject faces is an ^{apparent problem}; in other words, it
+is a problem that does not allow a definitive representation. Therefore,
+the representation that the subject makes to itself of the apparent
+problem is changing; we have called this representation the ^{problem of
+the subject}. When the problem of the subject changes, its resolution
+and solution change as a consequence. Translating from resolution to
+evolution, as we already did in ^>Knowledge Is Provisional>, this means
+that all knowledge is provisional.
+
+And because no knowledge is certain, it is not certain either that new
+knowledge is definitely superior to previous knowledge, so just in case,
+it is better not to forget any knowledge. Surely it is because of this
+that human ^{knowledge} is cumulative, and we forget only occasionally
+with disuse and ^{time}. This is the ^{problematic explanation} of why
+we cannot ^{forget}, especially when we want to forget.
+
+
+\Section Intent
+
+Many other comparisons can be made between the ^{problematic
+explanation} and the other explanations. You are free to test, with
+whatever subject interests you the most, which explanation seems most
+accurate. Here we will continue to investigate the most meaningful
+matter: meaning.
+
+Meaning appears with the ^{knower}, capable of using reality in
+different ways, in order to choose from among them the way that best
+serves him. Meaning is useful, in short, in order to be able to use
+reality according to his own interests, or, to put it another way,
+^{meaning} is the means that the knowers use to integrate external
+conditions with internal needs (see ^>Meaning>).
+
+Given that the subjects know that they are facing a problem, they have a
+conscious purpose, to solve the problem, which confers ^{intent} upon
+everything that they consciously do. They do not do things just to do
+them; rather they have an end in view, marked out by the problem that
+they know they are facing. This is why their conscious ^{behavior} is
+intentional.
+
+Thus, working upon the knower with its meanings, evolution
+\hbox{designed} the ^{subject} with its intentions. And if meanings
+served the knower for using reality according to its own interests, they
+will also serve the subject for doing so according to its intentions.
+The difference is that, while the subject sees_{see} the meanings, or is
+conscious of the meanings and, because of this, can use them with
+intent, the knower uses the meanings, but cannot see them. The subject's
+intentions are conscious, that is, they can be expressed, while the
+knower's interests cannot.
+
+
+\Section The Homunculus
+
+As ^[Searle]^(Searle1992) points out, if we study man's_{man} cognition
+while rejecting ^{meaning} and ^{intent}, then all of the calculations
+that the ^{nervous system} carries out mechanically must be so that in
+the end a ^{homunculus} makes the conscious decisions. We still have to
+explain this homunculus' cognition, who, in order to make conscious
+decisions, must use meanings that direct its intentions. But then
+explaining the homunculus' cognition is the same as explaining human
+cognition itself, so that we may as well skip this homunculus that
+doesn't explain anything anyway. If you are interested in other opinions
+on this difficulty, you can consult, among others,
+ ^[Dennett]^(Dennett1991),
+ ^[Edelman]^(Edelman1992), or
+ ^[Crick]^(Crick1994).
+
+^[Searle] is right and there are only two solutions. One is to deny
+^{consciousness}, that is, to label it illusory. But here we prefer
+neither to reject meaning nor intention. Although there is not a
+homunculus in the brain, there is a ^{mirror}, as we saw in
+^>Consciousness>.
+
+
+\Section The Theory of Subjectivity
+
+As we are finding out, we can licitly use purposes, ends, intentions,
+and meanings in the problematic explanation. Just the opposite happens
+with the automatic explanations, which do not admit final, or
+teleological_{teleology} reasonings and which, consequently, cannot
+accommodate meanings at all. The incoherence of an explanation with no
+meaning is patent, and this justifies the uneasy cohabitation of
+automatic explanations with material explanations that use natural
+meanings, that is, things and their meanings.
+
+Let us take the ^{electron} as an example. Although orthodox physics
+provides us with the wave equation that describes its behavior as the
+sole explanation, because it avoids paradoxes_{paradox} in this way, the
+mere fact that the electron is described with its own equation, reveals
+that it is still being treated like a thing, or more exactly, following
+^[Bohm]\footnote{_(Bohm1951), page~118.}, like an object that is neither
+a classic particle nor a wave, but that presents the properties of one
+or the other depending on the circumstances.
+
+Straining the situation, only the ^{universe} wave equation completely
+avoids paradoxes. But if ^{physics} had to limit itself to this
+equation, it would be completely useless, due to the impossibility of
+presenting it and even more of resolving it, although the solution is,
+quite literally, before our eyes: we only have to open them to see it in
+all its splendor.
+
+The ^{theory of subjectivity} unravels the situation by introducing the
+^{subject}. Men are subjects, but not any kind of subjects; we humans
+are the subjects that evolution has found among the primates. And, as
+subjects, meanings_{meaning} serve to ease the relationship between the
+exterior conditions and the interior appetites. Besides, because of our
+genetic heritage, our meanings fit things_{thing} easily and, with a bit
+more difficulty, they fit concepts_{concept}, too. That is why we stick
+to the electron as a thing. We need our theories to refer to some object
+in order to hang meanings onto them, because it is thus, and in no other
+way, that we are able to understand.
+
+What the theory of subjectivity reveals to us in the end is that the
+equations depend on how we the subjects are constructed, because even
+the existence of the hypothetical objects that we call electrons depends
+on the subject that gives them meaning. The ^|theory of subjectivity| is
+a subjectivist theory of the subject.
+
+
+\Section A Priori Synthetic Knowledge
+
+Although, according to the ^{theory of subjectivity}, the subject
+constructs the ^{world}, it does not do so upon a blank sheet of white
+paper. Let us see why.
+
+The ^{problem of survival}, which defines ^{life}, is an ^{apparent
+problem}, or, to put it another way, in the beginning life had no
+^{information} about what was good for it and what was not (see ^>The
+Problem of Survival>). But now life is a set of living beings, and each
+living being is a resolver of the problem of survival that has received
+^{information} from other resolvers that have gone before.
+
+Thus, the ^{learner}, capable of making models of the ^{environment},
+has \latin{a priori} ^{knowledge} of the exterior. Because its
+^{genetic} heritage, what makes it a learner instead of something else,
+is also information about the exterior. It informs the learner, in the
+purest etymological sense, that modeling the exterior environment helps
+it to survive. This shows that the aprioristic ^{categories} that
+^[Kant]\footnote{_(Kant1787), page 168 of the 1787 edition} thought
+necessary, preceding as he did ^[Darwin], are contingent, as any fruit
+of Darwinian ^{evolution} is.
+
+In our own case, the ^{syntax engine} that makes us subjects_{subject}
+(see ^>Reason>), that ^[Chomsky] calls ^{universal grammar}, is
+aprioristic, that is, we subjects inherit it genetically.
+
+In order to save ^{empirism}, all that is needed is for
+^[Locke]'s^(Locke1690) blank sheet of white paper to refer to the
+knowledge that life had when it appeared, not to the knowledge a man has
+when he is born. In our jargon: the problem of survival is an apparent
+problem, but the ^{problem of the subject} is not.
+
+
+\Section Logicism
+
+It seems to us, as it did to ^[Locke], that we are capable of thinking
+anything, no matter how distant it may be from what we habitually
+experience. But be careful, because this is deceptive for two reasons.
+
+\point What is unimaginable cannot be imagined_{imagine}; therefore,
+whatever our imaginative limitation is, we think that everything is
+imaginable because, I repeat, it is not possible to imagine the
+unimaginable. In logical terms, we cannot represent to ourselves what is
+not representable in our ^{internal logic}, as
+^[Wittgenstein]^(Wittgenstein1922) revealed to us.
+
+\point Our symbolism does not work directly upon the data captured by
+our senses, but it works taking things_{thing} with ^{meaning} as data.
+That is, with respect to the data upon which the symbolic apparatus
+works, things with meaning, our knowledge is genetically coded.
+
+\noindent We will develop the second point in the following section,
+_>Objectivism>. We will develop the first point here.
+
+When we presented the ^{apparent problem} in ^{automatic algebra} (see
+^>Formalizing the Apparent Problem>), we wrote that the {\universe}
+could be any universe, $\forall\aut U$. We expressed, with this
+proclamation, that in the apparent problem no ^{information} is
+available \latin{a priori} about what is external. But even though we
+may proclaim this, our own limitation makes us incapable of considering
+those universes that we are incapable of imagining. How could it be
+otherwise? This also happens in the formal presentation of the apparent
+problem, since the {\universe} cannot be just anything, but, because we
+employ automatic algebra as logic, it must be a finite automaton,
+$\forall\aut U \in \{ \aut A \}$.
+
+Because of our lack of imagination, we provide information even when we
+are trying not to do so. This is what I call ^|logicism| (see ^>The
+Problem of the Learner>). Any formalization of the apparent problem
+necessarily is guilty of logicism (see \EPA{4.5}, where I called it
+^{essentialism}).
+
+By calling the logic in which an apparent problem is represented
+^{external logic}, we can extract some of the consequences of logicism.
+External logic must be such that it allows the representation of the
+apparent problem itself as well as its possible resolutions and
+solutions (see ^>Automatic Algebra>). These are exactly the same
+conditions required of the subject's internal logic (see ^>The Symbolic
+Subject>, and ^>Reason>). This implies that the external logic of a
+particular apparent problem is always good for the internal logic of a
+subject of this same problem, and \latin{vice versa}, so that both
+logics can be the same. Thus, when a subject presents its own
+problematic situation, the best thing it can do is postulate, as
+external logic, its own internal logic, as it cannot imagine another
+more expressive logic. By the way, the demonstration that \Mental
+recursive syntax$L_{\syn U}$ is the most expressive, seen in
+^>Expressiveness>, reveals to us that this is precisely our syntax, a
+conclusion that is known as the ^[Church]-^[Turing] thesis (see
+^[Hofstadter]^(Hofstadter1979)).
+
+
+\Section Objectivism
+
+Logicism_{logicism} is not, in principle, either good or bad; it is just
+what happens and besides, it is inevitable. What is pernicious is not to
+realize its influence. Objectivism_|objectivism| is the form this error
+takes on among those who do not understand that the objective and
+semantic ^{reality} is the specific way we see_{see} what is external,
+but who think that that is how things are; they believe that things are
+as we see them.
+
+For example, lack of imagination induces us to think that things_{thing}
+exist_{existence} on their own, that the reality of things is exterior
+to and independent of the subject. And, although the practical
+repercussions of objectivism may be negligible, the philosophic
+consequence of this fallacy is to put ^{ontology} before
+^{epistemology}. Here we prefer to make the theory of knowledge the base
+of philosophy and unlink ontology from ^{philosophy} in order to
+attribute it to ^{psychology}. Another example is the so-called quantum
+paradoxes_{paradox}, such as the wave-particle duality of the
+^{electron}, which also is due to the need that we persons have, in
+order to understand what is external, of thing-ifying it, that is, of
+referring it to objects with meaning. ^[Bohr]^(Bohr1929) had already
+thought that it would be necessary to renounce the intuitive
+representation of atomic phenomena.
+
+The need to ^{thing-ify} in order to understand is a human need, but not
+a need of subjects in general. It is rooted in ^{perception},
+^{learning}, and ^{emotion}, which construct things as objects with
+^{meaning}. Going back to the analogy of perception with spectacles that
+add labels_{label}, that we used in ^>Objective Reality Is Subjective>,
+we can argue that, in order to recompose what is beyond the spectacles,
+it is necessary to counteract the distorting effect of the lenses. That
+is, once we know that perception, learning, and emotion are the causes
+of the distortion, we are ready to reinterpret the quantum paradoxes.
+The theory of subjectivity offers us this possibility, which means
+subordinating ^{physics} to ^{psychology}.
+
+
+\Section Self and Reality
+
+Every syntactic expression needs a ^{subject} in order to have
+^{meaning}; going further, only subjects employ syntactic expressions.
+So there is no sense in talking about absolute truths, which would have
+to be syntactic expressions whose meaning did not depend on any subject;
+nor is there any sense in talking about objective explanations, which
+would be explanations based on absolute truths. Truth_{truth} and
+^{explanation} are necessarily subjective.
+
+What is immediate is what is subjective. What is objective is a
+construction. Thus it is not possible to explain what is subjective by
+what is objective, rather what is subjective explains what is objective.
+Yet the subject does not see itself as a subject, but as a ^{self}. It
+sees itself as free to resolve problems and so it sees itself as
+inhabiting ^{syntax}. I am in syntax. That is why semantic reality looks
+to the subject as if it were given and independent from the subject
+itself, when it actually depends on the subject to the point that it is
+constructed by the subject itself.
+
+Finally, here are three summaries that will undo ^{objectivism}:
+\point It is true that self is outside of the ^{reality} of things, but
+it is also true that self and the real things are in the subject (see
+^>Things and Concepts>).
+\point In the subject's ^{world} reality and the self both fit (see
+^>The World>).
+\point Self and reality are in different levels of the same subject
+(see ^>Levels>).
+
+
+\Section There Are Erroneous Meanings
+
+In the case of the physics theory used to predict_{prediction} the
+behavior of the ^{electron}, neither the theory in itself, nor the
+electron, which is a ^{concept} and not a ^{thing}, have ^{meaning}. The
+^{subject} is who gives it the meaning, the subject who elaborates or
+interprets this theory, instead of another one, because it is the one
+that allows him to construct the electronic devices that, in the end,
+help him to live. All meanings have their origin in the ^{apparent
+problem} of survival, and this is why there is no meaning beyond the
+subjective loop (see ^>The Subjective Loop>).
+
+But we people also do things for the simple pleasure of doing them,
+even, sometimes, at the risk of our lives. Let us forget risky
+activities because, in spite of their high profile, they cannot be so
+dangerous if we look at their low mortality statistics. Even so, it is
+true that we can contemplate a sunset, or ^{sing}, for the mere pleasure
+of doing it, and that does not cause us to consider these to be
+activities with no sense or meaning. I am certain that, in spite of
+their appearance, these activities also, even the dangerous ones,
+contribute to mere survival. Our evolutionary history has constructed us
+in a certain way, and we are prepared to stand a certain range of
+^{relaxation} and of ^{tension} that has been useful for our survival as
+a species. When our ^{environment} does not provide the adequate dosage
+of relaxation or tension, we must obtain it in other ways.
+
+The point is that, even if we cannot rationally justify why we like
+^{music}, if we find it pleasant, then it has meaning. The same goes for
+^{pain} that is disproportionate to the danger it signals. If it is
+pain, it has, by definition, a meaning (see ^>Sentiment>). It could
+happen that, due to some accident of our evolutionary history, a certain
+pain may now be counterproductive, because its intensity may force us to
+attend to it and, consequently, we would not attend to other less
+bothersome but more dangerous pains.
+
+This is no more than an example of the idea that genetic ^{information}
+is also provisional, as we saw in ^>Knowledge Is Provisional>. But what
+is interesting in this case is that only a subject, by relating all of
+these data to the ^{problem of survival}, can conclude that even the
+most primitive natural meanings can be erroneous. For a knower there are
+no erroneous meanings; there cannot be, because, even though it uses
+meanings, it cannot ^{see} them as the subject does, or, consequently,
+wonder whether they are adequate or not.
+
+It is certainly interesting to know that natural meanings can be
+erroneous, but it complicates the situation enormously. Because the
+simple rule that establishes that every natural meaning is necessarily
+correct then fails. We people are subjects that are designed by
+^{chance} and, because of this, things are not as they appear to us, as
+we already mentioned in ^>Down with Objectivism!>.
+
+
+\Section The Problem Is the Source of Meaning
+
+Objectivists say that a ^{stone} is a thing that exists_{existence} on
+its own and that it does not, therefore, require any explanation; the
+stone simply is. On the other hand, they require an explanation for
+^{God}, ^{nation}, or any other concept, in order to accept them as
+existing (see ^>The Material Explanation>). For objectivism,
+things_{thing} have ^{meaning}, but it is necessary to look for the
+meaning of concepts_{concept}.
+
+For us, the difference between the stone and the nation is that they are
+objects that come from different phases of ^{evolution}, so that they
+are images or representations that are found in different layers of the
+^{world} (see ^>The World>, ^>Layers>, and ^>Self and Reality>). But, as
+both are objects, and there is no difference between them in this, both
+must be explained, although each turns out to have a different
+explanation. It is only because of this that we distinguish things, like
+the stone, from concepts, like the nation. The fact that the stone is an
+object constructed by ^{perception}, ^{learning}, and ^{emotion}, but
+independent of our ^{will}, and that the nation is a theoretic and
+voluntary object, is circumstantial and does not fundamentally alter the
+situation.
+
+We have to look for the meanings of things as well as of concepts, and
+this meaning continues to be the way of reconciling the external
+conditions with the internal conditions for the resolver of the problem
+of survival (see ^>Meaning> and ^>Intelligence>). And since the natural
+meanings of things can be erroneous, as we showed in the previous
+section (_>There Are Erroneous Meanings>), definitive meanings must be
+obtained in the end from the problem of survival, which permits us to
+accurately measure the importance of the different conditions, because
+the final objective of all its resolvers is, specifically, its solution.
+$$\hbox{Problem}
+   \llave{Freedom\cr
+    Condition$\,
+     \left\{ \vcenter{\nointerlineskip\halign{#\hfil\crcr
+      Internal\cr
+      $\quad\;\bigm\updownarrow\hbox{Meaning}$\cr
+      External\cr
+     }}\right.$
+    \cr}
+$$
+
+
+\Section The Limits of Knowledge
+
+Meaning_{meaning} harmonizes desires_{desire} with ^{perception} in
+mental resolvers. The mental resolvers, knowers as well as subjects,
+keep in mind the spatial_{space} ^{geometry} of the conditions of the
+problem they are facing, that is, they distinguish whether the
+conditions are internal or external. So we can say that the meaning is
+the geometry that the system formed by the problem and its resolver
+adopts (see ^>Time and Space>). There is no meaning without a problem.
+In our case, the apparent problem of survival is the primitive source of
+meanings. Life_{life} and ^{death} are the limits of meaning, and we
+cannot go beyond them.
+
+This is a consequence of our ^{semantic} theory of subjectivity,
+according to which (as we saw in ^>There Are Erroneous Meanings>) the
+wave equation that describes the ^{electron} according to ^{physics} has
+meaning because, in the end, it allows us to construct electronic
+devices that make our lives easier.
+
+It is not possible to explain the meaning of life, rather it is life
+that gives us meaning. Explanations can go on until they reach survival,
+but no further. No meta-thanatic theory that transcends death, or life,
+makes sense.
+
+
+\Section The Limits of Communication
+
+If ^|communication| is the transferral of meanings_{meaning}, then the
+^{theory of subjectivity} also establishes limits to communication:
+given that the ^{problem} provides the meanings, there can only be
+communication between two resolvers of the same problem. This result has
+various consequences because, when we make limits, we are always
+defining an inside and an outside, a possible and an impossible.
+
+As the resolvers of the same problem can, in principle, share meanings,
+and as all living beings_{life} are resolvers of the problem of
+survival, it turns out that living beings can communicate. This is why
+we understand plants_{plant} that, even though they are mere mechanisms,
+search for the light of the ^{sun}. We could also interpret that the
+^{moon} is searching for the most comfortable path around the ^{earth},
+but this way of speaking, that gives a spirit to something that is not
+alive, is always figurative. It does not work well, because, while the
+plant would die if it does not find the light it yearns for, the moon is
+exempt from these contingencies.
+
+And on the contrary, since only the resolvers of the same problem can
+share meanings, it turns out that we cannot communicate with anything
+that is not alive. The search for extraterrestrial ^{intelligence} can
+run into an insurmountable difficulty because of this. This is because
+any regularity must be considered a symbolic regularity, not merely a
+physical one, in order for us to give it meaning. And for a regularity
+to be considered symbolic, we must suppose that, underneath the manifest
+syntax, there is an underlying semantic ^{intention}. I can explain this
+better with an example. The regularity of ^{quartz} crystals can be
+interpreted to be the result of resolving a complicated
+three-dimensional problem of energy minimization. But as the resolved
+problem is not the problem of survival, we do not attribute intention to
+it, and, consequently, we cannot communicate with rocks.
+
+A ^{robot} constructed by an engineer would be another matter. It is not
+alive according to the traditional definition of life, linked to the
+organic chemistry of carbon. However, if it were designed with the
+purpose of surviving, then it would form part of life, as defined
+according to this theory of subjectivity, that is, defined as an
+apparent problem (see ^>The Problem of Survival>). This robot could be
+an ^{adaptor}, like a ^{thermostat} designed to maintain the
+^{temperature}, but then it could not be intelligent, and communication
+with it would be poor. The case of a ^{subject} robot would be very
+different; this robot can be more intelligent and rational than a
+person. We will return to this subject in _>Man's Successor>.
+
+
+\Section The Semantic Bubble
+
+All living_{life} beings constitute a semantic universe, or put more
+humbly, a ^{semantic bubble}, because we share the same ^{problem}. This
+means that, on one hand, we cannot communicate with things that aren't
+alive, and, on the other hand, ^{communication} is possible, in
+principle, among all living beings. But while knowers can change the
+meanings of objects and we subjects can, besides, ^{see} the meanings,
+learners and adaptors do not distinguish objects from meanings, and
+mechanisms do not even use objects. Thus, the richest communication, and
+the only communication capable of transmitting problems and resolutions
+unrestrictedly, is symbolic communication between subjects.
+
+
+\Section The Mental Colony
+
+Man, \latin{homo sapiens}, is very similar genetically to the
+^{chimpanzee}, \latin{pan troglodytes}, and nevertheless, in 1980,
+according to ^[Ayala]^(Ayala1980), there were some hundred thousand
+chimpanzees and some four and a half billion people, that is, forty-five
+thousand people for every chimpanzee. So a small ^{genetic} difference
+has caused an enormous evolutionary advantage, as we already mentioned
+in ^>A Small Difference>.
+
+We hold that ^{symbolization} marks this advantage, and is the most
+recently acquired characteristic. If we agree that the ability to
+symbolize is the most recently acquired ability, then we share all the
+other cognitive characteristics with the other animal species. Thus, for
+example, ^{perception}, which makes objects_{object}, and the
+^{emotional system}, which makes meanings_{meaning}, are also employed
+by other animal species.
+
+Symbolization makes language with ^{recursive syntax} possible, and this
+is unique to humans. Symbolization allows human associations having more
+than a million members, and turns the human being into the only mammal
+that, like the {ant}, forms colonies_{colony}. Because language with
+recursive syntax, which makes us able to communicate and share problems,
+resolutions, and solutions, allows us to reach a mental
+^{specialization} equivalent to the specialization that the ants achieve
+in the corporal layer (see ^>Layers>). It is interesting to note that,
+according to ^[Hölldobler] and ^[Wilson]^(H\"olldobler1994), the total
+weight of all the ants approximately coincides with the weight of all
+the human beings.
+
+Symbolization distinguishes us as a species and gives us an advantage
+with respect to the other species. It is unique because it corresponds
+to the last evolutionary step. Its advantage for survival is that it
+permits us to form colonies.
+
+
+\Section Culture
+
+Symbolism_{symbolism} allows us to establish any syntactic
+^{convention}, and the best convention is the one that best serves the
+case of the moment. If the syntax is recursive_{recursivity}, the
+syntactic machinery is completely flexible and, no matter what syntactic
+modeling is needed, it is possible to define it, as we saw in ^>The
+Universal Turing Machine>. In particular, we can start out from an
+established syntax and extend_{extensibility} it to cover other
+purposes, as in the case of mathematical, scientific, or any other
+^{jargon}. Thus, syntax is conventional, that is, the syntactic objects
+can have any meaning, or none, and they can refer to any object, which
+can also be syntactic. And so a syntactic expression can even refer to
+itself.
+
+All of this was already known, but the essential difference between our
+species and others did not seem to be that we are conventional. It is,
+however. The reason, as we already know, is that with ^{recursive
+syntax}, symbolism allows the representation and expression of problems,
+resolutions, and solutions. This is crucial because living beings are
+resolvers of the ^{apparent problem} of survival, so that the only
+living beings able to represent the situation as it is, including
+themselves in it, are those whose logic is symbolic, that is, we, the
+subjects. Only we subjects are conscious of the problematic situation in
+which we live.
+
+To put it another way, we humans can express and communicate part of our
+cognitive processes, a part which includes our ^{reality} along with our
+problems and resolutions. You could say that our conscious ^{thought} is
+transparent, or, more exactly, revealing_{revealing}. The consequence is
+that some people can take advantage of the knowledge and wisdom of
+others, alive or dead, so that the resolutions found by one person, if
+they are beneficial, can be employed by any other person. This process
+of shared, or distributed ^{cognition}, known by the name of ^|culture|,
+is what allows us to form human colonies_{colony} with millions of
+members and what, in short, has given \latin{homo sapiens} an
+unprecedented evolutionary_{evolution} development during the last
+thirty thousand years (see ^[Harris]^(Harris1989)). This may seem like a
+long time, but it is not really, compared with the over three billion
+years that have gone by since ^{life} appeared. This explosion deserves
+more explanation.
+
+
+\Section Darwinian Evolution
+
+The first strategy employed by ^{life} to resolve the ^{apparent
+problem} consisted of applying the process of imperfect reproduction and
+natural ^{selection} discovered by ^[Darwin]^(Darwin1859) (see ^>The
+Apparent Problem>). This is a two-level process: the higher level
+produces the resolvers and the lower level determines the solution to be
+applied, in the form of behavior (see ^>The Double Resolution>). Now we
+know that this is the method the knowers use to resolve problems (see
+^>The Formal Knower>). Besides, as Darwinian evolution chooses by trial
+and error, it works as a knower that tests_{test}. This is why
+^{Darwinian intelligence} is tentative, not semantic.
+
+While ^{evolution} produced mechanisms, adaptors, and learners, it
+maintained the two levels, but when Darwinian evolution, working itself
+as a knower that tests, began to generate knowers with semantic
+^{intelligence}, the process acquired an additional level. Because the
+genetic endowment, when it constructed a ^{knower}, no longer completely
+determined the resolution to be employed; this can be any of the
+resolutions that the ^{mind} of the knower constructed is capable of
+achieving. That is, two intelligences intervene to determine which
+resolution will actually be applied: Darwinian intelligence, which
+selects a knower, and the semantic intelligence of the knower selected,
+which chooses a resolution.
+
+The knower's semantic intelligence must consider the external situation
+as well as the internal one, and within this last, the bodily situation
+as well as the mental one. With this consideration of its own mental
+situation, and we must remember that the mind is the knower's multiple
+resolver, the knower meddles for the first time with the resolution of
+the ^{problem of survival}. This problem, up to the moment the knowers
+appeared, was the exclusive dominion of Darwinian evolution. And, in
+order to carry out its part in the resolution of the apparent problem,
+the knower must deal with desires_{desire} and sentiments, that is, with
+meanings_{meaning}.
+
+
+\Section Cognitive Evolution
+
+With the knowers, the task of determining which resolution to employ was
+divided between Darwinian evolution's_{Darwinian evolution}
+^{intelligence} which selects the knower and the intelligence of the
+selected ^{knower} itself. But neither of these two intelligences is
+capable of foreseeing_{foresight} the effect of the resolutions, that
+is, neither is rational_{reason}. When Darwinian evolution began to
+generate subjects, which can represent problems, resolutions, and
+solutions in their symbolic logic with ^{recursive syntax} (see
+^>Algorithms>), evolution itself underwent a qualitative change. Because
+the ^{subject}, even though it continued to be the result of the process
+of Darwinian evolution, surpasses the process.
+
+The subject completely interiorizes the resolution process of the
+^{problem of survival}, as we saw in ^>Layers>. When it does this, the
+subject can ponder in mere instants different resolutions that Darwinian
+evolution would take generations to try out. With the subjects, the
+process of evolution accelerates or, as we said, explodes, because the
+physical construction of the resolver becomes unnecessary. This is why
+we distinguish ^{physical evolution}, or Darwinian evolution, from
+^{cognitive evolution}, which only happens in the subjects' reason.
+
+And just as the different resolvers of the problem of survival that
+Darwinian evolution found are physically different, the resolutions of
+cognitive evolution are representations in the recursive syntax of the
+subject's symbolic logic, and cannot be physically or perceptibly
+distinguished. They cannot be distinguished because the subject's
+resolutions are syntactic expressions, and, as such, are conventions
+which, in themselves, have no ^{meaning}.
+
+So we have, on one hand, ^{Darwinian evolution}, or physical evolution,
+that works as a knower that tests_{test} because it is capable of
+diverse resolutions that it selects by a trial-and-error procedure. And
+on the other hand, we have cognitive evolution, which works through
+subjects that reason, because they can represent various possible
+resolutions and their consequences to themselves, and, in this way, they
+can foresee the results of the different ways of resolving the problem.
+Darwinian evolution is intelligent, but tentative, and cognitive
+evolution is rational.
+
+
+\Section Technology
+
+Man could instantly become acclimatized to the cold. It wasn't necessary
+for the hairiest individuals to survive better and leave a greater
+number of descendents, so that after many generations the population was
+mostly hairy. Using the skin of other already acclimatized animals for
+warmth and ^{clothing} was enough. Wearing clothes to keep warm seems
+simple, but no animal species other than our own does it. The reason is
+that we are the only live subjects. But let us stop a moment to
+appreciate the details of this better.
+
+We can say that only we subjects extend ^{physical evolution} with
+^{cognitive evolution} which, in this case, instead of giving us hair,
+clothes us. This explanation, already very general, can be generalized
+further if we consider that all of the tools_{tool}, utensils, and
+artifacts that we manufacture are, like clothing, ^{prostheses} produced
+by cognitive evolution that complete our physical body.
+
+The previous explanation does not illuminate why cognitive evolution
+allows subjects to manufacture tools. This is because tools are
+resolutions turned into things, so that, in order to be able to
+manufacture them, one has to imagine them; that is, it is necessary to
+represent them to oneself internally. And only we subjects have a logic
+that allows the representation of resolutions, as we saw in ^>Tools>. We
+make utensils because our logic is symbolic.
+
+Symbolic logic_{symbolic logic}, with which we interiorize the
+resolution of problems, is responsible for ^|technology|, which we
+define as the physical and especially the mental disposition that allows
+us to manufacture tools. Tools, being resolutions made things, are the
+perceivable, or physical, features of cognitive evolution. These same
+tools are also the most visible aspects of culture, because ^{culture}
+is the transmission of resolutions from subject to subject using
+symbolic languages. This is the reason that it is correct to refer to
+cognitive evolution as ^{technologic evolution} or ^{cultural
+evolution}.
+
+
+\Section Controlling the Environment
+
+Constructing artifacts can be seen either as the manufacture of
+^{prostheses} that extend the body, or as the modification of the
+^{environment} in order to accommodate it to our body. If making
+^{clothing} fits the first perspective better, building a ^{house} seems
+to be better described in the second way. In the end, they are two ways
+of facing the same fact: ^{cognitive evolution} acts outside of the
+^{body}.
+
+\breakif1
+
+In fact, until now cognitive evolution only acted outside of the body.
+Or at least it had only acted indirectly on the bodies through the
+^{artificial selection} of domestic animals and plants for agriculture,
+that ^[Darwin]^(Darwin1859) used as the first reasoning for this theory.
+This is no longer so.
+
+We subjects can ^{see} the whole situation because we can represent the
+problem of survival and its resolution, the life in which we ourselves
+are included, to ourselves. This is why we subjects have a
+^{consciousness} of our position within the whole. And also because of
+this, cognitive evolution surpasses and includes ^{physical evolution}.
+In plain words: man can intervene in the processes of Darwinian
+evolution, in the selection as well as in the genetic reproduction, and
+modify them.
+
+
+\Section The Only Living Subject
+
+A ^{recursive syntax} is an extensible system of conventions that serves
+to resolve problems because it allows the expression of problems,
+resolutions, and solutions. Because they are conventional, syntactic
+symbols are empty of ^{meaning} and the problems are what provide
+meanings. Symbolism_{symbolism}, with semantics and recursive syntax,
+was designed by Darwinian ^{evolution} because ^{life} is an ^{apparent
+problem}. The ^{subject} is the resolver of the apparent problem of
+survival whose logic is symbolic. And the only live subject is ^{man}.
+Up to now.
+
+
+\Section Man's Successor
+
+The theoretical resolution of the ^{apparent problem} reveals to us that
+^{physical evolution}, or Darwinian evolution, and ^{cognitive
+evolution}, or cultural evolution, are two stages of the same process
+(see ^[Elias]^(Elias1989)). And while Darwinian evolution's workings are
+opportunistic and tentative, that is, they use the test method, also
+called trial-and-error, of the knowers that ^{test}, cognitive
+evolution, on the contrary, is symbolic and reasoned, as corresponds to
+subjects, and is not opportunistic, but finalist and
+teleological_{teleology}.
+
+One example of Darwinian evolution's ^{opportunism} is the appearance of
+the ^{nervous system} which permitted the step from the ^{mechanism},
+capable of a single  ^{behavior}, to the ^{adaptor}, capable of various.
+Because the cause that drove its appearance was possibly not this one,
+but the fact that the nervous system allowed the transmission of data at
+a greater distance, and so organisms with larger bodies but still with a
+unitary and coordinated behavior could be constructed.
+
+This suggests that man can improve the opportunistic design of the
+Darwinian process and that the successor of \latin{homo sapiens} will be
+a product of genetic ^{engineering} designed by man himself, although it
+will not necessarily be based on ^{organic chemistry}. There is always
+the possibility, of course, that \latin{homo sapiens} may become
+extinct_{extinction}, with no descendents. Or, even worse, that the very
+success of our species, or of its successor, will turn out to be a
+^{plague} and finish off all ^{life}.
+
+
+\Section Ethics
+
+The only resolver of the ^{apparent problem} that can be
+self-conscious_{self-consciousness} is a subject, because only a subject
+can, with its symbolic reasoning, represent resolvers to itself. Thus,
+only a subject can represent itself to itself. And, also because is has
+^{symbolic logic}, the subject is the only resolver capable of
+representing the problem it is facing to itself. Only a subject can be
+conscious_{consciousness} because only a subject can completely ^{see}
+the situation in which it finds itself, including the problem of
+survival and itself (see ^>Consciousness and Self-Consciousness>).
+
+By representing the problem it is facing to itself, the conscious
+^{subject} reaches the origin of meanings_{meaning} and, by representing
+itself to itself, the self-conscious subject reaches its own meaning as
+a resolver. Consequently, every conscious and self-conscious subject is
+responsible for using its freedom according to its own meaning. This is
+the ethical_|ethics| responsibility of the subject that knows it is free
+and mortal, that is, alive. We call the subject with ethical
+responsibility a ^|person|.
+
+Several consequences follow from these definitions. The ethical problem,
+what should be done?, coincides with the ^{problem of the subject}, what
+to do in order not to die?, as both point to the ^{problem of survival},
+so that ^{epistemology} and ethics are one and the same. It is not by
+chance, then, that the development of resolutive evolution manages to
+make the subject responsible for the future. In other words,
+\latin{homo sapiens}, because he is the only live subject, is the
+conscience of life, and his future and that of all life is in his hands.
+What an enormous responsibility man has!
+
+
+\Section Ethics and Epistemology Are the Same
+
+Ethics_{ethics} and ^{epistemology} are one and the same. It is
+surprising that, while ^[Socrates] coincides with this result in his
+dialogue ^<Protagoras>^(Plato-IV), in which he considers virtue
+  (arete, $\grave\alpha\rho\varepsilon\tau\acute\eta$)
+ to be equal to knowledge
+  (episteme, $\grave\varepsilon\pi\iota\sigma\tau\acute\eta\mu\eta$),
+^[Kant], on the other hand, had to write his ^<Critique of Practical
+Reason>^(Kant1788) because he was incapable of including ethics in his
+^<Critique of Pure Reason>^(Kant1787). The cause of this failure was
+that ^[Kant] took as his paradigm of knowledge ^[Newton]'s ^{physics},
+which we have classified here as a ^{material explanation}, and which
+excludes ^{freedom} (see ^>The Entry Path Explanation>). This is
+surprising because ^[Kant]'s ^{Copernican revolution} straightened out
+the path that epistemology had lost because it had followed ^{ontology}
+according to the dictates of ^[Socrates]. Ironically, for ^[Socrates]
+the first thing, even before ontology, was ethics, so that his purpose
+was to evade the sophists' subjectivist epistemology, which he judged to
+be ethically noxious.
+
+
+\Section Indoctrination
+
+Controlling the ^{environment} also includes controlling other living
+beings, although the degree of manipulation depends on the kind of
+resolver that one pretends to dominate. If one is controlling a
+mechanism, capable of one single behavior, then the only option is to
+take advantage of this behavior or not take advantage of it; we can, if
+we wish, cultivate wheat. In the case of adaptors, with various
+behaviors, if one of them interests us, we can provoke it by interfering
+with its perception; just by moving our hand near a fly that is sitting
+we provoke it to fly away. But, given the rigidity of their behaviors,
+it is impossible to train mechanisms or adaptors.
+
+In order to ^{train} animals, they need to be learners, and it only
+works if it is possible to model their ^{reality} according to our
+interests. Thus, for example, ^[Lorenz]^(Lorenz1949) could {\em really}
+be the mother to some geese_{goose}.
+
+Domesticating_{domesticate} animals is possible if they are knowers,
+because one can influence their assignation of meanings. A dog can be
+trained to give the ^{meaning} \meaning{food} to the sound of a bell, or
+to fetch ^{slippers}.
+
+But the greatest control possible is the control that can be exercised
+over a ^{subject}. The greatest domination is obtained by altering the
+problem of the subject, which is its very ^{self}, because a subject
+indoctrinated_{indoctrinate} in this way will use all its force of
+resolution, and all of its ^{freedom}, and all of its being, to achieve
+its purpose. This can even be literally so, because a subject can
+consciously commit suicide if it has decided that ^{suicide} is the
+solution.
+
+
+\Section Suicide
+
+A ^{knower} can kill itself if it fatally assigns an inadequate meaning
+to a mortal sign, as we saw in ^>Arbitrary Signs>. But it would not be
+correct to say that the knower committed suicide, because it was not its
+^{intention} to die.
+
+So only we subjects can commit suicide. Suicide_{suicide} is
+contradictory to the live nature of the ^{subject}, but precisely
+because it is such an extreme occurrence, it serves to show the
+subject's great flexibility, and its enormous danger.
+
+
+\Section Life
+
+The ^{problem of survival}, in short, life, gives us sense and
+meanings_{meaning} because we people are living subjects. Living because
+we are resolvers of the apparent problem of survival in particular, not
+another problem. And subjects because, faced with an apparent problem,
+we are resolvers capable of presenting the problem that we are facing to
+ourselves in our ^{symbolic logic} with recursive ^{syntax}. To
+summarize: because we are living subjects, we are part of life and are
+responsible for its future, even though we are not indispensable to it.
+
+And ^|life| is an ^{apparent problem}. To this definition of life, which
+is more a postulate than a definition (see _>The Subjective Loop>), only
+two kinds of information can be aggregated. One is redundant
+information, such as that we know nothing of life except that it is a
+problem; the other is circumstantial information referring to its
+resolution, for example, historical information about the Darwinian
+^{evolution} of the species, which takes advantage of certain processes
+that ^{organic chemistry} studies.
+
+And the apparent problem, as we have seen, is only ^{freedom} and
+condition. The condition distinguishes life from death. The freedom is
+\dots, well, that is what I wanted to get to.
+
+
+\Section Freedom
+
+Freedom_|freedom| is one of the two parts that constitute every
+^{problem}. There is no problem without freedom, nor freedom without a
+problem. Because without freedom there is necessity and perhaps
+^{chance}; there is ^{fatality} but there is no problem. However, there
+is no freedom without limits, without conditions, and freedom with a
+condition is a problem. If freedom were complete, there would be no
+^{desire}, but only satisfaction. And, with total satisfaction, there
+could be no problem, a problem being the opposite of satisfaction.
+Freedom and problem are inseparable.
+
+The problem is freedom and condition. And when the resolver of the
+problem is complex, it must use meanings that integrate the external
+conditions with its needs or internal conditions. That is why there is
+no ^{meaning} without a problem, and as there is no problem without
+freedom, either, it turns out that in order for there to be meaning,
+there has to be freedom. Meaning is impossible without freedom.
+
+But the meaning is in the conditions, and freedom is, precisely, the
+other part of the problem. Freedom is a concept that is necessarily,
+even tautologically, free of meaning. This is why ^{semantics} is
+insufficient and a ^{symbolism} with semantics and recursive ^{syntax}
+is necessary, in order to represent freedom. Freedom is a syntactic
+concept. Freedom and symbolic logic are inseparable.
+
+Given the problematic essence of ^{life}, freedom is an inseparable part
+of life that gives us meaning and that is the source of all meaning. The
+apparent problem of survival is the problem, and all other problems
+derive from it; they are its subproblems. Just as freedom is limited and
+only exists in problems, it turns out that all freedom derives from the
+problem of survival. Freedom and life are inseparable.
+
+The resolution of the problem of survival is an evolutionary process
+that culminates in the ^{subject}, a resolver capable of representing
+the problem it faces to itself, as well as representing itself to
+itself. The subject has a ^{symbolic logic} that allows it to be
+conscious of the problem it faces and conscious that it is, itself, a
+resolver. The subject knows it is alive, that is, the subject knows that
+it is free and mortal. The subject defines itself in relation to the
+problem that gives it meaning: I am freedom to not die. Freedom and the
+subject are inseparable.
+
+Man, \latin{homo sapiens}, is the only living subject. Knowing that it
+is alive and part of life lays upon the subject responsibilities towards
+life, that is, it makes the subject a ^{person}. Most of all because,
+given his possibility of surpassing Darwinian evolution, the person is
+free to drastically modify the conditions of life, and with them the
+whole problem of survival. Freedom and ^{ethics} are inseparable.
+
+
+\Section Subjective Science
+
+Occidental natural philosophy, or ^{science}, finds no place for
+^{freedom} and, because of this, cannot study man properly. For the same
+reason, it cannot comprehend ^{ethics}, or the ^{subject}, or ^{life},
+or ^{symbolism}, or ^{meaning}, or the ^{problem}. A subjective science
+is necessary. What we propose, with this ^{theory of subjectivity}, is
+to surpass the ^{material explanation} and the ^{automatic explanation}
+with the ^{problematic explanation}.
+
+Science's difficulties arise because it limits itself to the study of
+physical ^{reality}, in which there is no room for freedom. What is
+physical and real is what the old logic of the subject, ^{semantics}, is
+capable of representing. Because of this, the things that we see thanks
+to perception are physical and real. Reality has the accumulated
+experience of millions of years in its favor. But just as having two
+feet and five fingers does not mean that the exterior is, in some way,
+bipedal and pentidactilar, the fact that we see real things doesn't mean
+that the exterior is, in some way, real, either. In all three cases, the
+present situation depends on chance decisions, reinforced by their
+initial success and then established irreversibly, made by evolution
+millions of years ago in circumstances that probably no longer prevail.
+
+What is theoretical has, in comparison with what is real, very little
+experience, hardly even a few thousand years. Even so, ^{syntax}, which
+is the subject's new logic for expressing theories and their concepts,
+is the way that evolution has found to revise and broaden reality beyond
+semantics. Besides, we should remember that what is peculiar about man
+is, precisely, the recursive syntax that completes his symbolic logic so
+that he can represent problems_{problem}, resolutions, and solutions.
+
+The restriction that limits science to the study of physical reality
+loses its foundation if real things as well as theoretical concepts are
+representations and the difference between them is merely historical. We
+see real things and we do not see theoretical concepts because of our
+cognitive constitution, the result of our evolutionary history. Only a
+subjective science that studies the whole world, things as well as
+concepts, has room for ^{freedom}. Because, I repeat, we are constructed
+in such a way that we cannot see freedom, and that is why we say that
+freedom is a concept, not a thing.
+
+One consequence of freedom not being real is that, even if we construct
+a free ^{robot}, which must be a symbolic resolver, that is, a subject
+faced with an ^{apparent problem}, we will not be able to see where we
+have put freedom, simply because freedom is a concept and concepts are
+beyond the reach of ^{perception}. And for the same reason,
+neurologists_{neurology} will never find freedom in the human ^{brain};
+it's not that it isn't there, it's that we cannot see it. Nevertheless,
+in these cases, the importance of invisible concepts is greater than
+that of visible things, because it is not possible to understand a
+subject if we do not understand that it is free.
+
+
+\Section The Emancipation of the Subject
+
+As ^[Thiebaut]^(Thiebaut1990) points out beautifully, the greatest
+revolution in ^{history} is the ^{emancipation} of the self.
+^[Descartes]^(Descartes1641) marks, in ^{philosophy}, the moment that
+the self begins to become independent, a process which, despite the time
+that has transcurred, is still unfinished. The conception of the world
+as a ^{mechanism} ruled by ^{universal laws} remits to the authority of
+^{God}; so the ^{subject} will only cease to be subjected when it
+acknowledges that it is free because the ^{world} is a problem, as
+subjective science proposes, not an imposed order.
+
+
+\Section Up with Subjectivism!
+
+The ^{history} of events up to the present can be summarized in four
+stages, that begin in the seventeenth century.
+
+\siglo{xvii} ^[Descartes], in the seventeenth century, established
+the foundations of modern ^{philosophy}: the only certain thing is the
+^{self}. He also pointed out the mutually irreducible nature of
+^{reality} as opposed to the ^{freedom} of the self, which he resolved
+by way of an ontological ^{dualism}.
+
+\siglo{xviii} ^[Kant] pointed out that an apparatus for understanding,
+which we call ^{logic} here, must be previous to understanding. But
+Kantian logic, even though it was capable of representing reality, could
+not represent freedom.
+
+\siglo{xix} ^[Darwin] postulated that ^{man}, \latin{homo sapiens},
+is a product of the ^{evolution} of the species. Consequently, his logic
+and his self must also be products of evolution. And even his freedom.
+From this point on, man cannot be understood without understanding life.
+
+\siglo{xx} ^[Turing] invented, following ^[Gödel], the ^{syntax
+engine}, dilucidating, in the process, symbolisms. A ^{symbolism} is a
+recursive ^{grammatical logic}, that is, a logic of maximum
+^{expressiveness}, divided in two layers: ^{semantics} and ^{syntax}.
+
+\siglo{xxi} And now our task is to integrate the discoveries of the
+four previous centuries.
+
+\noindent
+In order to do this, we only have to substitute ^[Kant]'s logic with a
+symbolism, so that ^[Descartes]' ontologic dualism is transformed into a
+logical dualism. There are not two different substances, but rather two
+types of logical representations: semantic objects_{object}, which are
+the real things_{thing} that are seen without having to think, and
+syntactic objects, which are the theoretical concepts_{concept} that we
+have to think but do not see.
+
+Logical dualism's explanation is historical and contingent; that is, it
+is Darwinian. Thus, to fit ^[Darwin], we must show that symbolism
+improves the possibilities for survival. And this is so if we postulate
+that ^{life} is an ^{apparent problem}, that is, exclusively freedom and
+the condition of not dying. Because, in order for a resolver of an
+apparent problem to be able to comprehend the complete situation, which
+includes the problem with its freedom and the resolver itself as the
+resolution, its logic has to be symbolic.
+
+A symbolic subject thus defined will see himself faced with the
+^{problem of survival}, that is, free, but under the condition of not
+dying. And his freedom will be as genuine as the freedom of the problem
+of survival. In other words, it is completely genuine, if we accept life
+as problematic and absolute.
+
+
+\Section Freedom Is Never Complete
+
+Admitting that ^{freedom} is a basic scientific concept requires us to
+admit that the ^{problem} is, also. And once it finds itself under
+science's_{science} discipline, freedom, whose infinity inspired the
+dreams of the romantics, is necessarily limited. This limitation also
+infects the ^{meaning} and, from the meaning, passes on to knowledge.
+
+Knowledge_{knowledge} is not absolute; it depends on the ^{subject} who,
+in turn, takes the meanings from the problem that it is resolving. The
+limit of freedom, the limit of meaning, and the limit of knowledge is
+the same; it is the ^{apparent problem} of survival, it is life.
+Life_{life} is a bubble of knowledge and freedom. Death_{death} has no
+meaning.
+
+In the end, not even freedom is a ^{transcendental concept}. No concept
+transcends death. Freedom is, however, one of the fundamental concepts,
+because it defines me. I am freedom to not die.
+
+
+\Section Why Do We Search for Freedom?
+
+Why do we search for ^{freedom}, if it only means problems for us?
+Because we like to advance in resolving problems and, even more, we like
+to solve them. It makes us happy because we are designed to solve
+problems. But, in order to solve a problem, there needs to be a problem.
+That is why we are curious, inquisitive, and for this same reason we
+search for the freedom that implies having problems and many different
+ways of resolving them. We flee from the tedium involved in mechanical
+and repetitive action, which may be effective but never problematic.
+
+
+\Section Knowledge Is Not Absolute
+
+The problematic and paradoxical nature of ^{life} and of the ^{subject}
+limit ^{knowledge}. This may seem inconvenient, but it would be mistaken
+to believe the contrary. And, on the other hand, the fact that knowledge
+is not absolute but depends on the subject who, in turn, is nothing more
+than a resolver of the apparent problem, generalizes two other
+scientific principles: that ^{space} is not absolute, proposed by
+^[Galileo], and that ^{time} is not absolute, established by
+^[Einstein].
+
+Besides, understanding that life is an ^{apparent problem}, allows us to
+integrate Darwinian ^{evolution} and ^{cultural evolution} in a single
+process that hinges on the subject. This subject is thus defined, and
+enjoys such an advantageous position, because his logic is
+symbolic_{symbolic logic}, so that he is conscious of the problem that
+he faces and conscious of himself_{self-consciousness} as a resolver of
+the problem. That is, life's problematic nature explains why symbolic
+language, ^{culture}, ^{technology}, ^{consciousness}, ^{ethics}, and
+^{freedom} coincide in man, the only living subject.
+
+\vskip1\baselineskip
+\centerline{\fonttwo The End}
+
+\endinput

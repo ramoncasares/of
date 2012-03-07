@@ -52,11 +52,11 @@
  \ISBN{0-19-814107-6}
 }
 
-\record{AristÛteles-IV}{BOOK}{
- \AUTHOR{AristÛteles}
- \TITLE{MetafÌsica}
+\record{Arist√≥teles-IV}{BOOK}{
+ \AUTHOR{Arist√≥teles}
+ \TITLE{Metaf√≠sica}
  \YEAR{IV a.C.}
- \EDITION{TraducciÛn de Patricio de Azc·rate}
+ \EDITION{Traducci√≥n de Patricio de Azc√°rate}
  \PUBLISHER{Espasa Calpe}
  \ADDRESS{Madrid}
  \YEAREDITION{2000}
@@ -65,8 +65,8 @@
 
 \record{Ashby1956C}{BOOK}{
  \AUTHOR{Ashby, W.R.}
- \TITLE{IntroducciÛn a la cibernÈtica}
- \PUBLISHER{Nueva VisiÛn}
+ \TITLE{Introducci√≥n a la cibern√©tica}
+ \PUBLISHER{Nueva Visi√≥n}
  \ADDRESS{Buenos Aires}
  \YEAR{1956}
  \YEAREDITION{1977}
@@ -83,7 +83,7 @@
 \record{Ayala1980}{BOOK}{
  \AUTHOR{Ayala, F.J.}
  \YEAR{1980}
- \TITLE{Origen y evoluciÛn del hombre}
+ \TITLE{Origen y evoluci√≥n del hombre}
  \PUBLISHER{Alianza}
  \ADDRESS{Madrid}
  \ISBN{84-206-2278-8}
@@ -91,7 +91,7 @@
 
 \record{Barrio1977}{BOOK}{
  \AUTHOR{Barrio G., J.}
- \TITLE{Prot·goras y Gorgias}
+ \TITLE{Prot√°goras y Gorgias}
  \SUBTITLE{. Fragmentos y testimonios}
  \PUBLISHER{Orbis}
  \ADDRESS{Barcelona}
@@ -131,7 +131,7 @@
 
 \record{Bohr1929C}{BOOK}{
  \AUTHOR{Bohr, N.}
- \TITLE{La teorÌa atÛmica y la descripciÛn de la naturaleza}
+ \TITLE{La teor√≠a at√≥mica y la descripci√≥n de la naturaleza}
  \PUBLISHER{Alianza}
  \ADDRESS{Madrid}
  \YEAR{1929}
@@ -171,7 +171,7 @@
 
 \record{Brun1965}{BOOK}{
  \AUTHOR{Brun, J.}
- \TITLE{Her·clito}
+ \TITLE{Her√°clito}
  \YEAR{1965}
  \PUBLISHER{Edaf}
  \ADDRESS{Madrid}
@@ -181,12 +181,12 @@
 
 \record{Cantor1897}{ARTICLE}{
  \AUTHOR{Cantor, G.}
- \TITLE{Beitr\"age zur Begr¸ndung der transfiniten Mengenlehre}
+ \TITLE{Beitr\"age zur Begr√ºndung der transfiniten Mengenlehre}
  \JOURNAL{Mathematische Annalen}
  \VOLUME{xlvi, xlix}
  \PAGES{481--512, 207--246}
  \YEAR{1895, 1897}
- \NOTE{Traducido al inglÈs por P.E.B.~Jourdain,
+ \NOTE{Traducido al ingl√©s por P.E.B.~Jourdain,
        Dover, Nueva York, 1955, ISBN 0-486-60045-9}
 }
 
@@ -202,8 +202,8 @@
 
 \record{Casares1959}{BOOK}{
  \AUTHOR{Casares, J.}
- \TITLE{Diccionario ideolÛgico}
- \SUBTITLE{ de la lengua espaÒola. Desde la idea a la palabra; desde la palabra a la idea}
+ \TITLE{Diccionario ideol√≥gico}
+ \SUBTITLE{ de la lengua espa√±ola. Desde la idea a la palabra; desde la palabra a la idea}
  \PUBLISHER{Gustavo Gili}
  \ADDRESS{Barcelona}
  \YEAR{1959}
@@ -214,7 +214,7 @@
  \AUTHOR{Casares, R.}
  \YEAR{1999}
  \TITLE{El problema aparente}
- \SUBTITLE{. Una teorÌa del conocimiento}
+ \SUBTITLE{. Una teor√≠a del conocimiento}
  \PUBLISHER{Visor Dis.}
  \ADDRESS{Madrid}
  \ISBN{84-7774-877-2}
@@ -316,7 +316,7 @@
  \AUTHOR{Delgado Kloos, C.}
  \TITLE{Semantics of Digital Circuits}
  \PUBLISHER{Springer Verlag}
- \ADDRESS{BerlÌn}
+ \ADDRESS{Berl√≠n}
  \YEAR{1987}
  \ISBN{3-540-18540-2}
 }
@@ -332,9 +332,9 @@
 
 \record{Descartes1641C}{BOOK}{
  \AUTHOR{Descartes, R.}
- \TITLE{Discurso del mÈtodo, Meditaciones metafÌsicas}
+ \TITLE{Discurso del m√©todo, Meditaciones metaf√≠sicas}
  \YEAR{1637, 1641}
- \EDITION{TraducciÛn, prÛlogo y notas de Manuel GarcÌa Morente}
+ \EDITION{Traducci√≥n, pr√≥logo y notas de Manuel Garc√≠a Morente}
  \PUBLISHER{Espasa-Calpe}
  \ADDRESS{Madrid}
  \YEAREDITION{1980}
@@ -444,8 +444,8 @@
 \record{Elias1989C}{BOOK}{
  \AUTHOR{Elias, N.}
  \YEAR{1989}
- \TITLE{TeorÌa del sÌmbolo}
- \SUBTITLE{. Un ensayo de antropologÌa cultural}
+ \TITLE{Teor√≠a del s√≠mbolo}
+ \SUBTITLE{. Un ensayo de antropolog√≠a cultural}
  \PUBLISHER{Peninsula}
  \ADDRESS{Barcelona}
  \YEAREDITION{2000}
@@ -464,17 +464,17 @@
 
 \record{Ernst1978}{BOOK}{
  \AUTHOR{Ernst, B.}
- \TITLE{El espejo m·gico de Maurits Cornelis Escher}
+ \TITLE{El espejo m√°gico de Maurits Cornelis Escher}
  \YEAR{1978}
  \PUBLISHER{Taschen}
  \YEAREDITION{1990}
- \ADDRESS{BerlÌn}
+ \ADDRESS{Berl√≠n}
  \ISBN{3-89450-240-1}
 }
 
-\record{Fern·ndez1987}{BOOK}{
- \AUTHOR{Fern·ndez Fern·ndez, G.; S·ez Vacas, F.}
- \TITLE{Fundamentos de inform·tica}
+\record{Fern√°ndez1987}{BOOK}{
+ \AUTHOR{Fern√°ndez Fern√°ndez, G.; S√°ez Vacas, F.}
+ \TITLE{Fundamentos de inform√°tica}
  \PUBLISHER{Alianza}
  \ADDRESS{Madrid}
  \YEAR{1987}
@@ -484,7 +484,7 @@
 \record{Feyerabend1988}{BOOK}{
  \AUTHOR{Feyerabend, P.}
  \TITLE{Against Method}
- \EDITION{EdiciÛn revisada}
+ \EDITION{Edici√≥n revisada}
  \PUBLISHER{Verso}
  \ADDRESS{Londres}
  \YEAR{1988}
@@ -508,8 +508,8 @@
  %\PUBLISHER{Franz Deuticke}
  %\ADDRESS{Leipzig und Wien}
  \YEAR{1900}
- \TITLE{La interpretaciÛn de los sueÒos}
- \EDITION{TraducciÛn de Luis LÛpez-Ballesteros y de Torres (1923)}
+ \TITLE{La interpretaci√≥n de los sue√±os}
+ \EDITION{Traducci√≥n de Luis L√≥pez-Ballesteros y de Torres (1923)}
  \PUBLISHER{Alianza}
  \ADDRESS{Madrid}
  \YEAREDITION{1966}
@@ -544,7 +544,7 @@
  \VOLUME{38}
  \YEAR{1931}
  \PAGES{173--198}
- \NOTE{Traducido al castellano por Jes˙s MosterÌn,
+ \NOTE{Traducido al castellano por Jes√∫s Moster√≠n,
        Alianza Universidad, Madrid, 1989,
        {\sc isbn:} 84-206-2286-9}
 }
@@ -595,7 +595,7 @@
  \AUTHOR{Hawking, S.W.}
  \TITLE{Historia del tiempo}
  \SUBTITLE{. Del big bang a los agujeros negros}
- \PUBLISHER{CrÌtica}
+ \PUBLISHER{Cr√≠tica}
  \ADDRESS{Barcelona}
  \YEAR{1988}
  \ISBN{84-7423-374-7}
@@ -636,7 +636,7 @@
 \record{H\"olldobler1994C}{BOOK}{
  \AUTHOR{H\"olldobler, B.; Wilson, E.O.}
  \TITLE{Viaje a las hormigas}
- \SUBTITLE{. Una historia de exploraciÛn cientÌfica}
+ \SUBTITLE{. Una historia de exploraci√≥n cient√≠fica}
  \PUBLISHER{Grijalbo Mondadori}
  \ADDRESS{Barcelona}
  \YEAR{1994}
@@ -678,9 +678,9 @@
 
 \record{Kant1787C}{BOOK}{
  \AUTHOR{Kant, I.}
- \TITLE{CrÌtica de la razÛn pura}
+ \TITLE{Cr√≠tica de la raz√≥n pura}
  \YEAR{1781, 1787}
- \EDITION{PrÛlogo, traducciÛn, notas e Ìndices por Pedro Ribas}
+ \EDITION{Pr√≥logo, traducci√≥n, notas e √≠ndices por Pedro Ribas}
  \PUBLISHER{Alfaguara}
  \ADDRESS{Madrid}
  \YEAREDITION{1993}
@@ -700,9 +700,9 @@
 
 \record{Kant1788C}{BOOK}{
  \AUTHOR{Kant, I.}
- \TITLE{CrÌtica de la razÛn pr·ctica}
+ \TITLE{Cr√≠tica de la raz√≥n pr√°ctica}
  \YEAR{1788}
- \EDITION{EdiciÛn de Roberto Aramayo}
+ \EDITION{Edici√≥n de Roberto Aramayo}
  \PUBLISHER{Alianza}
  \ADDRESS{Madrid}
  \YEAREDITION{2000}
@@ -722,7 +722,7 @@
 
 \record{Klir1969C}{BOOK}{
  \AUTHOR{Klir, G.J.}
- \TITLE{TeorÌa general de sistemas}
+ \TITLE{Teor√≠a general de sistemas}
  \YEAR{1969}
  \PUBLISHER{ICE}
  \ADDRESS{Madrid}
@@ -741,7 +741,7 @@
 \record{Kuhn1970C}{BOOK}{
  \AUTHOR{Kuhn, Th.S.}
  \TITLE{The Structure of Scientific Revolutions}
- \EDITION{2™ ediciÛn, ampliada}
+ \EDITION{2¬™ edici√≥n, ampliada}
  \PUBLISHER{The University of Chicago Press}
  \ADDRESS{Chicago}
  \YEAR{1970}
@@ -770,10 +770,10 @@
 
 \record{LaoZiC}{BOOK}{
  \AUTHOR{Lao Zi}
- \YEAR{ø?}
+ \YEAR{¬ø?}
  \TITLE{Lao zi}
  \SUBTITLE{ [El libro del tao]}
- \EDITION{TraduciÛn, prÛlogo y notas por J.I.~Preciado. EdiciÛn biling¸e}
+ \EDITION{Traduci√≥n, pr√≥logo y notas por J.I.~Preciado. Edici√≥n biling√ºe}
  \PUBLISHER{Alfaguara}
  \ADDRESS{Madrid}
  \YEAREDITION{1978}
@@ -782,7 +782,7 @@
 
 \record{LaoZi}{BOOK}{
  \AUTHOR{Lao Tzu}
- \YEAR{ø?}
+ \YEAR{¬ø?}
  \TITLE{Tao Teh Ching}
  \EDITION{Translated by John C.H.\ Wu}
  \PUBLISHER{Shambhala Publications}
@@ -797,7 +797,7 @@
  \TITLE{An Essay concerning Human Understanding}
  \PUBLISHER{Penguin}
  \ADDRESS{London}
- \EDITION{EdiciÛn de R.~Woolhouse}
+ \EDITION{Edici√≥n de R.~Woolhouse}
  \YEAREDITION{1997}
  \ISBN{0-14-043482-8}
 }
@@ -816,8 +816,8 @@
 \record{Lorenz1949C}{BOOK}{
  \AUTHOR{Lorenz, K.}
  \YEAR{1949}
- \TITLE{El anillo del rey SalomÛn}
- \SUBTITLE{. Hablaba con las bestias, los peces y los p·jaros}
+ \TITLE{El anillo del rey Salom√≥n}
+ \SUBTITLE{. Hablaba con las bestias, los peces y los p√°jaros}
  \PUBLISHER{RBA}
  \ADDRESS{Barcelona}
  \YEAREDITION{1993}
@@ -897,7 +897,7 @@
 \record{Monod1970C}{BOOK}{
  \AUTHOR{Monod, J.}
  \TITLE{El azar y la necesidad}
- \SUBTITLE{. Ensayo sobre la filosofÌa natural de la biologÌa moderna}
+ \SUBTITLE{. Ensayo sobre la filosof√≠a natural de la biolog√≠a moderna}
  \PUBLISHER{Tusquets}
  \ADDRESS{Barcelona}
  \YEAR{1970}
@@ -981,8 +981,8 @@
  \AUTHOR{Ortega y G., J.}
  \TITLE{Meditaciones del Quijote}
  \YEAR{1914}
- \EDITION{EdiciÛn de Juli·n MarÌas}
- \PUBLISHER{C·tedra}
+ \EDITION{Edici√≥n de Juli√°n Mar√≠as}
+ \PUBLISHER{C√°tedra}
  \ADDRESS{Madrid}
  \YEAREDITION{1995}
  \ISBN{84-376-0481-8}
@@ -992,8 +992,8 @@
  \AUTHOR{Pavlov, I.}
  \YEAR{1904}
  \TITLE{Discurso en el Premio Nobel}
- \BOOKTITLE{FisiologÌa y psicologÌa}
- \EDITOR{A.~ColodrÛn}
+ \BOOKTITLE{Fisiolog√≠a y psicolog√≠a}
+ \EDITOR{A.~Colodr√≥n}
  \PUBLISHER{Alianza}
  \ADDRESS{Madrid}
  \YEAREDITION{1968}
@@ -1041,22 +1041,22 @@
 }
 
 %\record{Plato-IV}{BOOK}{
-% \AUTHOR{PlatÛn}
-% \TITLE{Di·logos}
+% \AUTHOR{Plat√≥n}
+% \TITLE{Di√°logos}
 % \YEAR{IV a.C.}
-% \EDITION{EdiciÛn de Francisco Larroyo}
-% \PUBLISHER{Porr˙a}
-% \ADDRESS{MÈxico}
+% \EDITION{Edici√≥n de Francisco Larroyo}
+% \PUBLISHER{Porr√∫a}
+% \ADDRESS{M√©xico}
 % \YEAREDITION{1989}
 % \ISBN{968-432-310-7}
 %}
 
 \record{Plato-IVC}{BOOK}{
- \AUTHOR{PlatÛn}
- \TITLE{Di·logos}
+ \AUTHOR{Plat√≥n}
+ \TITLE{Di√°logos}
  \YEAR{IV a.C.}
- \EDITION{IntroducciÛn general por Emilio LledÛ ÕÒigo,
-  traducciÛn y notas Carlos GarcÌa Gual {\it et alii}}
+ \EDITION{Introducci√≥n general por Emilio Lled√≥ √ç√±igo,
+  traducci√≥n y notas Carlos Garc√≠a Gual {\it et alii}}
  \PUBLISHER{Gredos}
  \ADDRESS{Madrid}
  \YEAREDITION{1981--1992}
@@ -1077,9 +1077,9 @@
 \record{Popper1972}{BOOK}{
  \AUTHOR{Popper, K.R.}
  \TITLE{Conjeturas y refutaciones}
- \SUBTITLE{. El desarrollo del conocimiento cientÌfico}
+ \SUBTITLE{. El desarrollo del conocimiento cient√≠fico}
  \YEAR{1972}
- \PUBLISHER{PaidÛs}
+ \PUBLISHER{Paid√≥s}
  \ADDRESS{Barcelona}
  \YEAREDITION{1983}
  \ISBN{84-7509-146-6}
@@ -1088,7 +1088,7 @@
 \record{Quine1940C}{BOOK}{
  \AUTHOR{Quine, W.V.O.}
  \TITLE{Mathematical Logic}
- \EDITION{EdiciÛn revisada}
+ \EDITION{Edici√≥n revisada}
  \YEAREDITION{1981}
  \PUBLISHER{Harvard University Press}
  \ADDRESS{Cambridge MA}
@@ -1108,10 +1108,10 @@
 }
 
 \record{RAE1970}{BOOK}{
- \AUTHOR{Real Academia EspaÒola}
+ \AUTHOR{Real Academia Espa√±ola}
  \TITLE{Diccionario}
- \SUBTITLE{ de la lengua espaÒola}
- \EDITION{Decimonovena ediciÛn}
+ \SUBTITLE{ de la lengua espa√±ola}
+ \EDITION{Decimonovena edici√≥n}
  \ADDRESS{Madrid}
  \YEAR{1970}
 }
@@ -1147,9 +1147,9 @@
 
 \record{Schopenhauer1818}{BOOK}{
  \AUTHOR{Schopenhauer, A.}
- \TITLE{El mundo como voluntad y representaciÛn}
- \PUBLISHER{Porr˙a}
- \ADDRESS{MÈxico}
+ \TITLE{El mundo como voluntad y representaci√≥n}
+ \PUBLISHER{Porr√∫a}
+ \ADDRESS{M√©xico}
  \YEAR{1818}
  \YEAREDITION{1992}
  \ISBN{968-432-886-9}
@@ -1181,10 +1181,10 @@
  \AUTHOR{Shakespeare, W.}
  \TITLE{Hamlet}
  \YEAR{{\it c}.~1601}
- \EDITION{EdiciÛn biling¸e del Instituto Shakespeare
+ \EDITION{Edici√≥n biling√ºe del Instituto Shakespeare
   dirigida por M.A.~Conejero}
  \YEAREDITION{1997}
- \PUBLISHER{C·tedra}
+ \PUBLISHER{C√°tedra}
  \ADDRESS{Madrid}
  \ISBN{84-376-1097-4}
 }
@@ -1204,9 +1204,9 @@
 
 \record{Smullyan1984}{BOOK}{
  \AUTHOR{Smullyan, R.}
- \TITLE{øCÛmo se llama este libro?}
- \SUBTITLE{ El enigma de Dr·cula y otras paradojas lÛgicas}
- \PUBLISHER{C·tedra}
+ \TITLE{¬øC√≥mo se llama este libro?}
+ \SUBTITLE{ El enigma de Dr√°cula y otras paradojas l√≥gicas}
+ \PUBLISHER{C√°tedra}
  \ADDRESS{Madrid}
  \YEAR{1984}
  \ISBN{84-376-0297-1}
@@ -1244,8 +1244,8 @@
 
 \record{Tovar1984}{BOOK}{
  \AUTHOR{Tovar, A.}
- \TITLE{Vida de SÛcrates}
- \EDITION{2™ ediciÛn}
+ \TITLE{Vida de S√≥crates}
+ \EDITION{2¬™ edici√≥n}
  \PUBLISHER{Alianza}
  \ADDRESS{Madrid}
  \YEAR{1984}
@@ -1281,7 +1281,7 @@
  \AUTHOR{Vygotsky, L.}
  \YEAR{1934}
  \TITLE{Pensamiento y lenguaje}
- \PUBLISHER{PaidÛs}
+ \PUBLISHER{Paid√≥s}
  \ADDRESS{Barcelona}
  \YEAREDITION{1995}
  \ISBN{84-493-0165-3}

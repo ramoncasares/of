@@ -27,7 +27,7 @@
 \font\fonttwosym=cmbsy10 scaled\magstep1
 \def\Stitle{{\fonttwosym \char"78}}
 
-\catcode`\ö=13 \defö{\"o}% for Gödel
+\catcode`\Ã¶=13 \defÃ¶{\"o}% for GÃ¶del
 
 \font\sc=cmcsc10
 \font\msbm=msbm10
@@ -536,7 +536,7 @@ enddef;
 % ^(cite1999)   _(cite1999)
 % ^|definition| _|definition|
 % ^<booktitle>  _<label>
-% ^>ref>        _>ref>   ( V = \S2.1, pág.~123     H = \S2.1 )
+% ^>ref>        _>ref>   ( V = \S2.1, pÃ¡g.~123     H = \S2.1 )
 
 \def\specialhat{\ifmmode\def\next{^}\else\let\next=\beginvref\fi\next}
 \def\specialund{\ifmmode\def\next{_}\else\let\next=\beginhref\fi\next}
@@ -626,7 +626,7 @@ enddef;
  \line{\bf\pdfgoto{#1}{#2}\hfil}\ignorespaces}
 \def\toclineone#1#2#3#4{\par
  {\pdfcode \pdf@ut \stringactives \pdfoutline goto num #2
-  count -\number\@utno {\noexpand§#3 #1}\pdfendcode}%
+  count -\number\@utno {\noexpandÂ§#3 #1}\pdfendcode}%
  \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
 
 \def\Referencias{Referencias}

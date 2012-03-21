@@ -18,7 +18,7 @@ will be another probabilistic finite automaton {\Metric}.
 All of these automata form the following circuit that represents the
 ^{formalized apparent problem} in automatic algebra (\EPA{1.4.1}).
 % Total interaction and external measurement
-$$\MTbeginchar(110pt,70pt,0pt);
+\MTbeginchar(110pt,70pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1 + x2 = w; x2 = x1 + 50u; y1b = y2b = 30v;
  \MT: rectangle(1)(20u,20v); % 1 is U
@@ -49,7 +49,7 @@ $$\MTbeginchar(110pt,70pt,0pt);
  \MT: x8lbl = x3lbl; y8lbl.t = y6 - jot;
  \MTlabel(8lbl)"\sevenbf 1";
 \MTendchar;
-\box\MTbox$$
+$$\box\MTbox$$
 
 The boldface~$\no n$ indicates the part of the ^{input} that does not
 directly influence the solution of the problem; this is the ^{neutral
@@ -85,7 +85,7 @@ they may not, if you learn to ignore them after a bit.
 \hbox{}\hbox{}\break
 
 % Total Interaction with Minimum Semantics
-$$\MTbeginchar(100pt,40pt,0pt);
+\MTbeginchar(100pt,40pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1 + x2 = w; x2 = x1 + 40u; y1b = y2b = 0;
  \MT: rectangle(1)(20u,20v); % 1 is U
@@ -104,7 +104,7 @@ $$\MTbeginchar(100pt,40pt,0pt);
  \MT: x4blbl = 1/2[x4bl,x4br]; y4blbl.t = 1/2[y4bl,y4br] - jot;
  \MTlabel(4tlbl)"\no n"; \MTlabel(4blbl)"\no v";
 \MTendchar;
-\box\MTbox
+$$\box\MTbox
 %\abovedisplayskip=0pt plus 3pt
 %\belowdisplayskip=0pt minus 6pt
 $$
@@ -167,7 +167,7 @@ will serve as the reference. The form of the {\mechanism} is the minimum
 that is sufficient in order to occupy the place of the ^{unknown}~$\aut
 A?$ in the formalized apparent problem (\EPA{1.6}).
 % Mecanismo
-$$\MTbeginchar(80pt,20pt,0pt);
+\MTbeginchar(80pt,20pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1 = w/2; y1b = 0; z1lbl = z1;
  \MT: rectangle(1)(20u,20v); % 1 is A_0
@@ -182,8 +182,7 @@ $$\MTbeginchar(80pt,20pt,0pt);
  \MT: y4lbl.t = y4o - jot; x4lbl = 1/2[x4o,x4d];
  \MTlabel(4lbl)"\no m";
 \MTendchar;
-\box\MTbox
-$$
+$$\box\MTbox$$
 
 
 \Section The Formal Adaptor
@@ -222,7 +221,7 @@ position to fulfill the condition of the governor, it must receive all
 of the ^{data}. Thus, we reach the definition of the form of the
 {\adaptor} (\EPA{2}).
 % Adaptor
-$$\MTbeginchar(140pt,60pt,0pt);
+\MTbeginchar(140pt,60pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1r = w - 20u; y1b = 0; z1lbl = z1;
  \MT: rectangle(1)(20u,20v); % 1 is B
@@ -249,7 +248,7 @@ $$\MTbeginchar(140pt,60pt,0pt);
  \MT: x10lbl.l = x10m; y10lbl.b = y10m + jot;
  \MTlabel(10lbl)"\no b";
 \MTendchar;
-\box\MTbox$$
+$$\box\MTbox$$
 
 We have used an automaton, the {\body}, with various behaviors here, as
 we mentioned previously in ^>Behavior>. The data~$\no b$ that the
@@ -391,7 +390,7 @@ correct.
 
 The form of the {\learner} is shown in the following figure (\EPA3).
 % Learner
-$$\MTbeginchar(170pt,60pt,0pt);
+\MTbeginchar(170pt,60pt,0pt);
  \MT: pickup thick_pen;
  \MT: x1r = w - 20u; y1b = 0; z1lbl = z1;
  \MT: rectangle(1)(20u,20v); % 1 is B
@@ -425,8 +424,7 @@ $$\MTbeginchar(170pt,60pt,0pt);
  \MT: x13lbl.l = x13m; y13lbl.b = y13m + jot;
  \MTlabel(13lbl)"\no b";
 \MTendchar;
-\box\MTbox
-$$
+$$\box\MTbox$$
 
 The data~$\no r$ allow the {\modeler} to communicate what {\reality} is
 like to the {\simulator}. Since {\reality} is an automaton, the

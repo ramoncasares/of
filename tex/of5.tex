@@ -1,4 +1,4 @@
-% OL5.TEX (RMCG20010122)
+% of5.tex (RMCG20010122)
 
 \Section Formalizing the Apparent Problem
 
@@ -70,20 +70,6 @@ capable of generating at every moment, whatever $\aut U$ is, a majority
 of~$1$ values in the valued input~$\no v$. This is what we are left with
 out of all the ^{formalized apparent problem}, and this is sufficient to
 follow the explanations that are coming next.
-
-
-\Section Notation
-
-The calligraphic letters that accompany some words may be making you
-uncomfortable. They are useful for pointing out the formal concepts
-defined mathematically: for example, with one glance, you can determine
-that the {\body} that I refer to is the body defined in the theory, and
-no other. It is worthwhile to put up with them, because they reduce the
-text's ambiguity. In exchange, they may hinder reading, but then again,
-they may not, if you learn to ignore them after a bit.
-
-\hbox{}\hbox{}\break
-
 % Total Interaction with Minimum Semantics
 \MTbeginchar(100pt,40pt,0pt);
  \MT: pickup thick_pen;
@@ -108,6 +94,17 @@ $$\box\MTbox
 %\abovedisplayskip=0pt plus 3pt
 %\belowdisplayskip=0pt minus 6pt
 $$
+
+
+\Section Notation
+
+The calligraphic letters that accompany some words may be making you
+uncomfortable. They are useful for pointing out the formal concepts
+defined mathematically: for example, with one glance, you can determine
+that the {\body} that I refer to is the body defined in the theory, and
+no other. It is worthwhile to put up with them, because they reduce the
+text's ambiguity. In exchange, they may hinder reading, but then again,
+they may not, if you learn to ignore them after a bit.
 
 And with these particulars, we are now ready to resolve the ^{formalized
 apparent problem}, as we proposed in ^>Evolution and Resolution>. Let us
@@ -197,6 +194,7 @@ The ^|adaptor|~$\aut A_1$ is made up of a {\body}, capable of various
 behaviors, and of a {\governor}, that chooses which of the behaviors
 will be executed.
 
+\beginpoints
 \point The ^|body|~$\aut B$ is an automaton capable of behaving like
 the {\mechanism} and in other ways besides, so that it is, technically,
 an ^{extension} of the {\mechanism}. Although technicalities do not
@@ -249,6 +247,7 @@ of the ^{data}. Thus, we reach the definition of the form of the
  \MTlabel(10lbl)"\no b";
 \MTendchar;
 $$\box\MTbox$$
+\endpoints
 
 We have used an automaton, the {\body}, with various behaviors here, as
 we mentioned previously in ^>Behavior>. The data~$\no b$ that the
@@ -356,6 +355,7 @@ behaviors, a {\modeler}, that models the exterior, and a {\simulator},
 that chooses the current behavior comparing possible behaviors with each
 other on the basis of their effects as predicted by the model.
 
+\beginpoints
 \point The {\learners} {\body} is capable of various behaviors,
 the more the better, as we saw in ^>Improving the Body>, but it has at
 least all the behaviors the {\adaptor} has, in order to surpass it.
@@ -387,6 +387,7 @@ has the advantage of avoiding the actual execution in the exterior
 {\universe} of the foreseeably worst behaviors, which coincide with the
 worst behaviors, because we are supposing that the predictions are
 correct.
+\endpoints
 
 The form of the {\learner} is shown in the following figure (\EPA3).
 % Learner
@@ -542,6 +543,7 @@ capable of more ways of resolving problems.
 
 Because the {\knower} is capable of resolving problems in various ways,
 we can divide it into two parts:
+\beginpoints
 \point A ^|mind|~$\syn M$ that is capable of resolving problems in
 various ways.
 \point An ^|intelligence|~$\syn A$ that decides which way of resolving
@@ -562,6 +564,7 @@ $$\hbox{Problem}\,
      Knower$\,{\cal A}_3$}}
   \,\hbox{Solution}
 $$
+\endpoints
 
 The {\minds} design is completely specified and, as a last resort, the
 {\mind} could be constructed by simply aggregating the {\mechanism}, the
@@ -598,7 +601,6 @@ the {\adaptor} behaves like the {\mechanism} when the mechanism is the
 solution in a {\universe}. What happens in these circumstances is that
 the {\adaptor} and the {\mechanism} have identical behavior, with the
 mechanism's behavior being simpler. We can deduce the first rule of the
-  \vadjust{\break}
 knower's {\intelligence} from this. The {\intelligence}, upon realizing
 that a mechanized behavior is the solution, will apply this
 \hbox{mechanized} behavior to avoid other more costly calculations that,
@@ -719,6 +721,7 @@ $$\hbox{Problem}\,
   \,\hbox{Solution}
 $$
 
+\beginpoints
 \point The {\subjects} {\mind} must be capable of various
 resolutions, the more the better, as we saw in the previous section
 (_>Improving the Mind>). But it must at the very least be capable of all
@@ -750,6 +753,7 @@ errors that the {\knower} is incapable of anticipating. This is so, even
 though it is impossible to verify that the condition of the inquirer is
 definitively satisfied; this is impossible because the {\subject} is
 facing an apparent problem.
+\endpoints
 
 
 \Section The Symbolic Subject
@@ -1004,8 +1008,6 @@ $$ {\cal P}_{\syn U}[{\syn P}_{\syn T}({\frak x})] \equiv
 This proves that there are paradoxes in all \mental recursive
 syntaxes$L_{\syn U}$.
 
-\break
-
 Besides, paradoxes_{paradox} that can be expressed in a \Mental
 universal language$L_{\syn U}$ are pertinacious, because it is not even
 possible to recognize them all. In order to prove this, it is necessary
@@ -1088,6 +1090,7 @@ What would happen if we wrote the expression
  on the {\UTM} tape?
 If the {\algStop} algorithm behaves as we have said, then we only have
 to study two possible cases.
+\beginpoints
 \point If ${\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$ is {\true},
 that means, according to the definition of {\algStop}, that the expression
  ${\algPdox}(Z): Z={\algPdox}(Z)$
@@ -1108,6 +1111,7 @@ cannot exist as we have defined it and, therefore, that within a
 universal language it is impossible to definitively determine whether an
 expression is paradoxical or not. And with this we have proven that, in
 recursive syntaxes, paradoxes are pertinacious.
+\endpoints
 
 
 \Section Recursive Syntax
@@ -1320,7 +1324,6 @@ apparent problem of survival, which goes through five stages, ends at
 the {\subject} with its {\self}, so that this second part of the exit
 path returns to the beginning, as we showed in ^>Comparing Selves>, and
 runs in the same direction as the entry path.
-
 $$\vbox{\everycr={}\tabskip=0pt \lineskip=0pt
   \halign{&\hfil#\hfil\cr
    Self& $\,\rightarrow\,$& Subject$\,$& \rightarrowfill&

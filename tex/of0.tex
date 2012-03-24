@@ -104,10 +104,34 @@
 %\rightline{[Agradecimientos]}
 % A Valentín Fernández Vidal
 % A Nancy Konvalinka
-\vfil
-\break
 
-\null\vfill\break % [6] Blanco
+\vfil
+\break % [6] Contents
+
+\null\vfil
+\begingroup
+\parindent=30pt \baselineskip=15pt
+
+\def\tocleaders{\leaders\hbox to\baselineskip{\hss\bf.\hss}\hfil}
+
+% \tocline{level}{Title}{dest}{section}{page}
+\def\tocline#1{\ifcase#1 \let\next=\toclinezero \or
+ \let\next=\toclineone \or \let\next=\toclinetwo
+ \else \let\next=\toclineindex \fi \next}
+
+\def\toclinezero#1#2#3#4{\indent{\fonttwo Contents}\par\kern8pt}
+\def\toclineone#1#2#3#4{\indent#1\quad \pdfgoto{#4}{#2}\par}
+\def\toclinetwo#1#2#3#4{\ignorespaces}
+\def\References{References}
+\def\toclineindex#1#2#3#4{\def\1{#1}\ifx\1\References\vskip8pt\fi
+ \indent#1\quad \pdfgoto{#4}{#2}\par}
+
+\input auxiliar.toc
+
+\endgroup
+
+\kern2pc
+\break
 
 \endinput
 

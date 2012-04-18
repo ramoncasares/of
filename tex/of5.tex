@@ -17,6 +17,9 @@ will be another probabilistic finite automaton {\Metric}.
 
 All of these automata form the following circuit that represents the
 ^{formalized apparent problem} in automatic algebra (\EPA{1.4.1}).
+
+\breakif1
+
 % Total interaction and external measurement
 \MTbeginchar(110pt,70pt,0pt);
  \MT: pickup thick_pen;
@@ -49,7 +52,9 @@ All of these automata form the following circuit that represents the
  \MT: x8lbl = x3lbl; y8lbl.t = y6 - jot;
  \MTlabel(8lbl)"\sevenbf 1";
 \MTendchar;
+\beginpoints
 $$\box\MTbox$$
+\endpoints
 
 The boldface~$\no n$ indicates the part of the ^{input} that does not
 directly influence the solution of the problem; this is the ^{neutral
@@ -153,6 +158,8 @@ all the possible universes in which automaton~$\aut A_a$ solves it and,
 in addition, in others. In this case we could affirm that, in spite of
 all the indetermination, automaton~$\aut A_b$ is better than
 automaton~$\aut A_a$.
+
+\breakif1
 
 In order to keep improving our resolution of the formalized apparent
 problem, we will show that, if a specific automaton solves it in certain
@@ -279,12 +286,14 @@ chose the adaptor's behavior. So, according to the formalization that is
 carried out, perception does the job of the {\governor}, but in a
 concrete way, using objects.
 
-\hbox{}\hbox{}\break
-
 The relation between both adaptors is made patent when we indicate, on
 the diagram of the evolutionary adaptor shown in ^>The Adaptor>, the
 parts of the formal {\adaptor} that carry out the processing of data
 represented by each arrow.
+
+\breakif2
+
+\beginpoints
 $$\hbox{Phenomenon}
   \underbrace{
    \base{$\aut G\;\;$\cr$\longrightarrow\;$}
@@ -292,7 +301,7 @@ $$\hbox{Phenomenon}
    \base{$\aut B$\cr$\;\longrightarrow$}}_{\hbox{\strut Adaptor}}
   \hbox{Action}
 $$
-
+\endpoints
 
 \Section Improving the Body
 
@@ -1003,10 +1012,12 @@ in any \Mental grammatical language$L_0$, for example in the language
 recognized by the {\TM} whose processor is~${\cal P}_{\syn T}$, then the
 expression~${\syn P}_{\syn T}({\frak x})$ is paradoxical in \Mental
 recursive syntax$L_{\syn U}$:
+\par\breakif2\beginpoints %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 $$ {\cal P}_{\syn U}[{\syn P}_{\syn T}({\frak x})] \equiv
    {\cal P}_{\syn T}[{\frak x}] \rightarrow \infty .$$
 This proves that there are paradoxes in all \mental recursive
 syntaxes$L_{\syn U}$.
+\endpoints
 
 Besides, paradoxes_{paradox} that can be expressed in a \Mental
 universal language$L_{\syn U}$ are pertinacious, because it is not even
@@ -1067,6 +1078,7 @@ with definitions:
 $$\algStop \cases{
  {\cal P}_{\syn U}[{\algStop}({\frak w}) : {\syn D}] \rightarrow \true
    & if ${\cal P}_{\syn U}[{\frak w} : {\syn D}]$ would stop; \cr
+ \noalign{\vskip6pt}
  {\cal P}_{\syn U}[{\algStop}({\frak w}) : {\syn D}] \rightarrow \false
    & if ${\cal P}_{\syn U}[{\frak w} : {\syn D}] \rightarrow\infty$ .\cr
 }$$
@@ -1100,6 +1112,9 @@ will make the {\UTM} stop, but, according to the definition of
   {\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$,
 that we are supposing is {\true}, so that what it will do is
 \latin{loop forever}, that is, not stop.
+
+\breakif1
+
 \point If, on the contrary, ${\algStop}({\algPdox}(Z)): Z={\algPdox}(Z)$
 is {\false}, then, according to the definition of {\algStop}, with
 ${\algPdox}(Z): Z={\algPdox}(Z)$ the {\UTM} should not stop, but,
@@ -1202,7 +1217,7 @@ paradoxes. All in all, paradoxes are no worse than bad resolutions.
 \Section Reason
 
 The {\inquirers} job is to describe with the greatest possible precision
-the problem that the {\subject} faces. Reason~$\syn R$ receives the
+the problem that the {\subject} faces. Reason~$\syn R$_|reason| receives the
 representation of the \Mental problem$X$ from the {\inquirer}; this
 representation is necessarily syntactic. And {\reason} produces, as a
 result, the representation of the resolution, that is the ^{algorithm}
@@ -1322,7 +1337,7 @@ from here, to ^{life}, defined as an ^{apparent problem}, where the
 first part, definitely the exit, finishes. But the ^{resolution} of the
 apparent problem of survival, which goes through five stages, ends at
 the {\subject} with its {\self}, so that this second part of the exit
-path returns to the beginning, as we showed in ^>Comparing Selves>, and
+path returns to the beginning, as we showed in _>Comparing Selves>, and
 runs in the same direction as the entry path.
 $$\vbox{\everycr={}\tabskip=0pt \lineskip=0pt
   \halign{&\hfil#\hfil\cr
@@ -1375,10 +1390,7 @@ previous reference level (\EPA2).
 $$\hbox{Adaptor $\aut A_1$}\llave{
    Governor $\aut G$\cr
    Body $\aut B$\lopen\langle{Mechanism $\aut A_0$}}$$
-
-\vfill\break
-
-\noindent Finally, the third level, in which the {\knower} and the
+Finally, the third level, in which the {\knower} and the
 {\subject} are to be found, originates in the {\mind} which, being
 capable of resolving problems like the \corporal learners$A_2$, like the
 \corporal adaptors$A_1$, and like the \corporal mechanisms$A_0$, contains

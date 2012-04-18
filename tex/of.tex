@@ -10,7 +10,9 @@
 %\input crops % OPTIONAL CROPS (Beware the next line!)
 \newdimen\hpage \newdimen\vpage % already defined in crops.tex
 
-\newif\ifportada \portadatrue
+\newif\ifportada %\portadatrue
+
+\english
 
 \def\[{\string\[} % to allow ^álgebra de \[Boole]^
 
@@ -233,9 +235,9 @@
    \vbox{\hbox{\big\uparrow}\nointerlineskip\null}\hfil\hfil\cr
    \noalign{\kern-3pt}
    \column{
-    \strut Objeto\cr
+    \strut Object\cr
     $\uparrow$\cr
-    \hidewidth\strut Sentimiento\hidewidth\cr
+    \hidewidth\strut Sentiment\hidewidth\cr
     $\uparrow$\cr
     \strut Libido\cr}\cr}}}
 
@@ -506,8 +508,8 @@ enddef;
 \def\hdefinition|#1|{\allowhyphens\ndx{#1}{1}}%\tomargin{\it#1}}
 \def\vlabel<#1>{{\sl#1}\itcor} % used for book titles only
 %\def\hlabel<#1>{\label{#1}}
-\def\vref>#1>{la~\S\refsc{#1}, pá\-gi\-na~\refpg{#1}}
-\def\href>#1>{la~\S\refsc{#1}}
+\def\vref>#1>{\S\refsc{#1}, page~\refpg{#1}}
+\def\href>#1>{\S\refsc{#1}}
 \def\vindex#1{\leavevmode\presignal\ndx{#1}{3}%
  \Blue\allowhyphens#1\allowhyphens\Black\signal}
 \def\hindex#1{\allowhyphens\ndx{#1}{3}\hsignal}
@@ -613,9 +615,9 @@ page~\refpg{The Chomsky Hierarchy}.
  \setbox0=\hbox{\the\YEAREDITION}\ifdim\wd0=0pt
   \YEAREDITION={\the\YEAR}\else\ (\the\YEAR)\fi
  \setbox0=\hbox{\the\EDITOR}\ifdim\wd0=0pt\else.
-   Recopilado por \the\EDITOR\fi
+   Re\-printed by \the\EDITOR\fi
  \setbox0=\hbox{\the\BOOKTITLE}\ifdim\wd0=0pt\else
-   \ en ``\the\BOOKTITLE''\fi
+   \ in ``\the\BOOKTITLE''\fi
  \setbox0=\hbox{\the\EDITION}\ifdim\wd0=0pt\else. \the\EDITION\fi
  \setbox0=\hbox{\the\PUBLISHER}\ifdim\wd0=0pt\else, \the\PUBLISHER\fi
  \setbox0=\hbox{\the\ADDRESS}\ifdim\wd0=0pt\else, \the\ADDRESS\fi

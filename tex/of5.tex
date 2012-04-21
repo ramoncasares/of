@@ -543,7 +543,7 @@ is a resolver.
 \Section The Formal Knower
 
 The {\mechanism}, the {\adaptor}, and the {\learner} are resolvers. Each
-one resolves problems in its own way, that is, each one searches, in a
+one resolves problems in its own way, that is, each one searches, in one
 specific way, for a behavior that will solve the problem. Thus, just as
 the {\adaptor} is an improvement over the {\mechanism}, simply because
 it is capable of more behaviors, the ^|knower|~$\aut A_3$, which is what
@@ -565,6 +565,7 @@ capable of resolving problems like each of these, and for the
 choose the {\mechanisms} manner of resolving the problem if the
 {\mechanism} solves it, the {\adaptors} manner, if this solves it, and
 the {\learners} manner, if this solves it (\EPA6).
+\belowdisplayskip=0pt
 $$\hbox{Problem}\,
    \underbrace{\strut
     \base{{\frakx A}$\;\;$\cr $\longrightarrow\;$}
@@ -721,6 +722,7 @@ searches for the best representation of the problem it is facing,
 {\reason} that searches for the best possible resolution for the problem
 that the {\inquirer} has found, and a {\mind} that resolves the problem
 in the way decided upon by {\reason} (\EPA7).
+\belowdisplayskip=0pt
 $$\hbox{Problem}\,
    \underbrace{\strut
     \base{{\frakx I}$\;\;$\cr $\longrightarrow\;$}
@@ -729,6 +731,7 @@ $$\hbox{Problem}\,
      Subject$\,{\cal A}_4$}}
   \,\hbox{Solution}
 $$
+\belowdisplayskip=12pt
 
 \beginpoints
 \point The {\subjects} {\mind} must be capable of various
@@ -855,10 +858,12 @@ with an infinite tape a {\TM}. The ^{tape} is, then, another memory that
 the {\TM} uses specifically to retain syntactic expressions while it is
 analyzing them. The finite automaton of the {\TM} is called the
 \Processor$T$.
+\abovedisplayskip=24pt
 $$\hbox{^[Turing] Machine~$\syn T$}\left\lbrace
   \vcenter{\hbox{Processor~${\cal P}_{\syn T}$}
            \hbox{Tape}}\right.
 $$
+\abovedisplayskip=12pt
 
 In order to indicate that, if we write the syntactic expression~$\frak
 e$ on the tape of the {\TM} whose processor is~${\cal P}_{\syn T}$ and
@@ -1012,7 +1017,7 @@ in any \Mental grammatical language$L_0$, for example in the language
 recognized by the {\TM} whose processor is~${\cal P}_{\syn T}$, then the
 expression~${\syn P}_{\syn T}({\frak x})$ is paradoxical in \Mental
 recursive syntax$L_{\syn U}$:
-\par\breakif2\beginpoints %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\par\breakif2\beginpoints %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 $$ {\cal P}_{\syn U}[{\syn P}_{\syn T}({\frak x})] \equiv
    {\cal P}_{\syn T}[{\frak x}] \rightarrow \infty .$$
 This proves that there are paradoxes in all \mental recursive

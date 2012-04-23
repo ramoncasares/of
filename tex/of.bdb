@@ -958,7 +958,8 @@
 
 \record{Neumann1945}{INCOLLECTION}{
  \AUTHOR{Neumann, J.von}
- \TITLE{First Draft of a Report on the EDVAC}
+ \TITLE{First Draft}
+ \SUBTITLE{ of a Report on the EDVAC}
  \YEAR{1945}
  \EDITOR{Ph.~Laplante}
  \BOOKTITLE{Great Papers in Computer Science}

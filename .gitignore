@@ -20,6 +20,7 @@ auxiliar.*
 *.png
 *.svg
 *.eps
+*.gif
 # ignore fonts
 *.pfb
 *.tfm

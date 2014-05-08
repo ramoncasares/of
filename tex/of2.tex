@@ -1650,10 +1650,12 @@ the ^{world}, not just with ^{reality}.
 
  \dimen0=\hsize \advance\dimen0-\tribar
 
-\noindent\parshape1 0pt \dimen0
-  \hbox to0pt{\kern\dimen0\vbox to0pt{%\kern-9pt
+\nointerlineskip
+  \hbox to0pt{\kern\dimen0\vbox to0pt{\kern12pt
   \box0\kern-10pt\box2\kern-9pt\box4\kern-9pt\box6\kern-12pt\box8\vss}\hss}%
-\indent
+\nointerlineskip
+
+\strut\parshape1 0pt \dimen0
 Even some optical illusions_{illusion} are paradoxes, for example,
 ^[Penrose]'s tribar. It is perfectly possible to represent the tribar on
 a flat surface, as the figures, adapted from

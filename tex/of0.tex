@@ -4,28 +4,38 @@
 
 % pdf
 
-\pdfcode
- \begingroup\corkfont
+\begingroup\corkfont
+ \ifcase\pdfoutput
+  \special{pdf: docinfo <<
+   /Author (© Ramón Casares 2002, 2012)
+   /Title (On Freedom)
+   /Subject (The Theory of Subjectivity)
+   /Creator (License http://creativecommons.org/licenses/by-sa/3.0/)
+   /Keywords (object problem meaning symbol syntax subject)
+  >>}
+ \else
   \pdfinfo{
    /Author (© Ramón Casares 2002, 2012)
    /Title (On Freedom)
    /Subject (The Theory of Subjectivity)
    /Creator (License http://creativecommons.org/licenses/by-sa/3.0/)
-   /Keywords (object problem meaning symbol syntax subject)}
- \endgroup
-\pdfendcode
+   /Keywords (object problem meaning symbol syntax subject)
+  }
+ \fi
+\endgroup
 
 % Text
 
 % [0] Cover
 
-\pdflabel \toc0{On Freedom}
+{\dest \let\secid\empty\toc0{On Freedom}}
 
 \ifportada
-\shipout\vbox{\background
-\pdfWhite
-\hbox{}
-\vskip72bp
+\ifcase\pdfoutput
+ \special{pdf: bgc [1 0 1 0]}\special{pdf: sc [0 0 0 0]}%
+\else \background \pdfWhite \fi
+\begingroup\nopagenumbers
+\hbox{}\vfill
 \centerline{\ptitlefont On}
 \vskip1pc
 \centerline{\ptitlefont Freedom}
@@ -35,8 +45,12 @@
 \centerline{\psubtitlefont Subjectivity}
 \vskip2pc
 \centerline{\pauthorfont Ramón Casares}
-\pdfBlack
-}
+\break
+\endgroup
+\advance\pageno-1
+\ifcase\pdfoutput
+ \special{pdf: bgc [0 0 0 0]}\special{pdf: sc [0 0 0 1]}%
+\else \pdfBlack \fi
 \fi
 
 % [1] Author and Title
@@ -70,10 +84,13 @@
 
 \null
 
-\def\URI#1#2{\leavevmode\pdfcode \pdfstartlink
-  attr {/Border [0 0 0]}
+\def\URI#1#2{\leavevmode
+\ifcase\pdfoutput
+ \special{html:<a href=\string"#2\string">}{\tt#1}%
+ \special{html:</a>}\else
+ \pdfstartlink attr {/Border [0 0 0]}
   user {/Subtype /Link /A << /Type /Action /S /URI /URI (#2) >>}%
- \pdfendcode{\tt#1}\pdfcode\pdfendlink\pdfendcode}
+ {\tt#1}\pdfendlink\fi}
 
 \vfill
  {\sl On Freedom}\par
@@ -118,11 +135,11 @@
  \else \let\next=\toclineindex \fi \next}
 
 \def\toclinezero#1#2#3#4{\indent{\fonttwo Brief Contents}\par\kern8pt}
-\def\toclineone#1#2#3#4{\indent#1\quad \pdfgoto{#4}{#2}\par}
+\def\toclineone#1#2#3#4{\indent#1\quad \goto{#4}{#2}\par}
 \def\toclinetwo#1#2#3#4{\ignorespaces}
 \def\References{References}
 \def\toclineindex#1#2#3#4{\def\1{#1}\ifx\1\References\vskip8pt\fi
- \indent#1\quad \pdfgoto{#4}{#2}\par}
+ \indent#1\quad \goto{#4}{#2}\par}
 
 \input auxiliar.toc
 
